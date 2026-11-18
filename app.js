@@ -16,6 +16,8 @@
     initPlatformRowInteractions();
     initZoomCards();
     initBannerInteractions();
+    initConnectedArchitecture();
+    initCardHoverFocus();
     initJourney();
   });
 
@@ -380,6 +382,231 @@
     // Initial render
     placeMarker(0);
     update();
+  }
+
+  /* =========================================================================
+     7. CONNECTED ARCHITECTURE HUB & SPOKE CONTROLLER (FROM AARKINN 8)
+     ========================================================================= */
+  function initConnectedArchitecture() {
+    const container = document.getElementById('system-diagram-container');
+    const svg = document.getElementById('system-connectors-svg');
+    const hub = document.getElementById('card-hub');
+    const consulting = document.getElementById('card-consulting');
+    const strategy = document.getElementById('card-strategy');
+    const design = document.getElementById('card-design');
+    const delivery = document.getElementById('card-delivery');
+    const tagline = document.getElementById('system-tagline-wrap');
+
+    if (!container || !svg || !hub || !consulting || !strategy || !design || !delivery) {
+      return;
+    }
+
+    const lines = {
+      consulting: document.getElementById('line-consulting'),
+      strategy: document.getElementById('line-strategy'),
+      design: document.getElementById('line-design'),
+      delivery: document.getElementById('line-delivery')
+    };
+
+    const cards = {
+      consulting,
+      strategy,
+      design,
+      delivery
+    };
+
+    let offsets = {};
+
+    function measureOffsets() {
+      if (window.innerWidth <= 900) {
+        Object.values(cards).forEach(c => {
+          c.style.transform = '';
+          c.style.opacity = '';
+        });
+        Object.values(lines).forEach(l => {
+          if (l) l.style.opacity = '0';
+        });
+        if (tagline) {
+          tagline.style.opacity = '1';
+          tagline.style.transform = 'none';
+        }
+        return;
+      }
+
+      Object.values(cards).forEach(c => {
+        c.style.transform = '';
+        c.style.opacity = '';
+      });
+
+      const hubRect = hub.getBoundingClientRect();
+      const hubCenterX = hubRect.left + hubRect.width / 2;
+      const hubCenterY = hubRect.top + hubRect.height / 2;
+
+      Object.keys(cards).forEach(key => {
+        const c = cards[key];
+        const rect = c.getBoundingClientRect();
+        const cardCenterX = rect.left + rect.width / 2;
+        const cardCenterY = rect.top + rect.height / 2;
+
+        offsets[key] = {
+          dx: hubCenterX - cardCenterX,
+          dy: hubCenterY - cardCenterY
+        };
+      });
+
+      applyFrame(currentProgress);
+    }
+
+    function calculateProgress() {
+      if (window.innerWidth <= 900) return 1;
+
+      const rect = container.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const start = windowHeight * 0.95;
+      const end = windowHeight * 0.35;
+      const progress = (start - rect.top) / (start - end);
+      return Math.min(1, Math.max(0, progress));
+    }
+
+    function smoothStep(t) {
+      return t * t * (3 - 2 * t);
+    }
+
+    function applyFrame(p) {
+      if (window.innerWidth <= 900) return;
+
+      const e = smoothStep(p);
+
+      Object.keys(cards).forEach(key => {
+        const card = cards[key];
+        const offset = offsets[key];
+        if (!offset) return;
+
+        const curX = offset.dx * (1 - e);
+        const curY = offset.dy * (1 - e);
+        const curScale = 0.8 + 0.2 * e;
+        const curOpacity = Math.min(1, Math.max(0, e * 2.5));
+
+        card.style.transform = `translate3d(${curX.toFixed(2)}px, ${curY.toFixed(2)}px, 0) scale(${curScale.toFixed(3)})`;
+        card.style.opacity = curOpacity.toFixed(3);
+      });
+
+      const containerRect = container.getBoundingClientRect();
+      const hubRect = hub.getBoundingClientRect();
+      const conRect = consulting.getBoundingClientRect();
+      const strRect = strategy.getBoundingClientRect();
+      const desRect = design.getBoundingClientRect();
+      const delRect = delivery.getBoundingClientRect();
+
+      const hubTL = { x: hubRect.left - containerRect.left, y: hubRect.top - containerRect.top };
+      const hubTR = { x: hubRect.right - containerRect.left, y: hubRect.top - containerRect.top };
+      const hubBL = { x: hubRect.left - containerRect.left, y: hubRect.bottom - containerRect.top };
+      const hubBR = { x: hubRect.right - containerRect.left, y: hubRect.bottom - containerRect.top };
+
+      const conTarget = { x: conRect.right - containerRect.left, y: conRect.bottom - containerRect.top };
+      const strTarget = { x: strRect.left - containerRect.left, y: strRect.bottom - containerRect.top };
+      const desTarget = { x: desRect.right - containerRect.left, y: desRect.top - containerRect.top };
+      const delTarget = { x: delRect.left - containerRect.left, y: delRect.top - containerRect.top };
+
+      const lineConfigs = [
+        { line: lines.consulting, origin: hubTL, target: conTarget },
+        { line: lines.strategy, origin: hubTR, target: strTarget },
+        { line: lines.design, origin: hubBL, target: desTarget },
+        { line: lines.delivery, origin: hubBR, target: delTarget }
+      ];
+
+      lineConfigs.forEach(({ line, origin, target }) => {
+        if (!line) return;
+
+        const curEndX = origin.x + (target.x - origin.x) * e;
+        const curEndY = origin.y + (target.y - origin.y) * e;
+
+        line.setAttribute('x1', origin.x.toFixed(1));
+        line.setAttribute('y1', origin.y.toFixed(1));
+        line.setAttribute('x2', curEndX.toFixed(1));
+        line.setAttribute('y2', curEndY.toFixed(1));
+
+        const lineOpacity = Math.min(1, Math.max(0, (e - 0.05) * 1.5));
+        line.style.opacity = lineOpacity.toFixed(3);
+      });
+
+      if (tagline) {
+        const tagE = Math.min(1, Math.max(0, (e - 0.7) / 0.3));
+        tagline.style.opacity = tagE.toFixed(3);
+        tagline.style.transform = `translate3d(0, ${((1 - tagE) * 15).toFixed(1)}px, 0)`;
+      }
+    }
+
+    let targetProgress = 0;
+    let currentProgress = 0;
+    let isTicking = false;
+
+    function renderLoop() {
+      currentProgress += (targetProgress - currentProgress) * 0.2;
+
+      if (Math.abs(targetProgress - currentProgress) < 0.001) {
+        currentProgress = targetProgress;
+      }
+
+      applyFrame(currentProgress);
+
+      if (Math.abs(targetProgress - currentProgress) > 0.0005) {
+        requestAnimationFrame(renderLoop);
+      } else {
+        isTicking = false;
+      }
+    }
+
+    function onScroll() {
+      targetProgress = calculateProgress();
+      if (!isTicking) {
+        isTicking = true;
+        requestAnimationFrame(renderLoop);
+      }
+    }
+
+    let resizeTimer = null;
+    function handleResize() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        measureOffsets();
+        targetProgress = calculateProgress();
+        currentProgress = targetProgress;
+        applyFrame(currentProgress);
+      }, 100);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', handleResize, { passive: true });
+    window.addEventListener('load', handleResize, { passive: true });
+
+    measureOffsets();
+    targetProgress = calculateProgress();
+    currentProgress = targetProgress;
+    applyFrame(currentProgress);
+  }
+
+  function initCardHoverFocus() {
+    const cards = document.querySelectorAll('.system-card');
+
+    cards.forEach((card) => {
+      const cardType = card.dataset.card;
+      const associatedLine = document.getElementById(`line-${cardType}`);
+
+      card.addEventListener('mouseenter', () => {
+        if (associatedLine) {
+          associatedLine.style.strokeWidth = '2.5px';
+          associatedLine.style.strokeDasharray = '6 3';
+        }
+      });
+
+      card.addEventListener('mouseleave', () => {
+        if (associatedLine) {
+          associatedLine.style.strokeWidth = '1.5px';
+          associatedLine.style.strokeDasharray = '4 4';
+        }
+      });
+    });
   }
 
 })();
