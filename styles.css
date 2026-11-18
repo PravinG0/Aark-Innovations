@@ -2891,14 +2891,15 @@ button {
   pointer-events: none;
 }
 
-/* Card Body / Description Layer (Fades in with elegant choreographic delay) */
+/* Card Body / Description Layer (Vertically centered with ample clearance below badge icon) */
 .fwrd-zoom-card__text-layer {
   position: absolute;
   inset: 0;
   z-index: 2;
   display: flex;
-  align-items: flex-start;
-  padding: 68px 24px 34px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px 26px 30px;
   opacity: 0;
   transform: translateY(8px);
   pointer-events: none;
@@ -2907,10 +2908,11 @@ button {
 
 .fwrd-zoom-card__desc {
   font-family: var(--font-body, sans-serif);
-  font-size: clamp(0.82rem, 1vw, 0.88rem);
+  font-size: clamp(0.84rem, 1vw, 0.9rem);
   line-height: 1.55;
   font-weight: 500;
   margin: 0;
+  text-align: left;
 }
 
 .fwrd-zoom-card--purple .fwrd-zoom-card__desc,
