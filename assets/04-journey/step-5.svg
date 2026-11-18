@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg5)"/>
+  <rect x="0.5" y="0.5" width="799" height="499" fill="none" stroke="#1e293b" stroke-width="1" rx="14"/>
+
+  <!-- Window Header -->
+  <rect x="0" y="0" width="800" height="46" fill="#090d16" fill-opacity="0.9"/>
+  <line x1="0" y1="46" x2="800" y2="46" stroke="#1e293b" stroke-width="1"/>
+  <circle cx="24" cy="23" r="5" fill="#ef4444"/>
+  <circle cx="40" cy="23" r="5" fill="#f59e0b"/>
+  <circle cx="56" cy="23" r="5" fill="#10b981"/>
+  <text x="80" y="27" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">AARK PRIVATE ENTERPRISE RAG &bull; CITATION-GROUNDED AI WORKFLOW</text>
+
+  <rect x="625" y="13" width="150" height="22" rx="11" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="1" stroke-opacity="0.4"/>
+  <circle cx="639" cy="24" r="3.5" fill="#8b5cf6"/>
+  <text x="649" y="27.5" fill="#c4b5fd" font-family="system-ui, sans-serif" font-size="10" font-weight="700">SOC2 PRIVATE &bull; NO LEAK</text>
+
+  <!-- AI Workflow Interface -->
+  <g transform="translate(30, 66)">
+    <!-- Prompt Bar -->
+    <rect x="0" y="0" width="740" height="56" rx="8" fill="#1e293b" fill-opacity="0.7" stroke="#3b82f6" stroke-width="1"/>
+    <text x="20" y="24" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="10" font-weight="700">ENTERPRISE RFP RETRIEVAL QUERY</text>
+    <text x="20" y="44" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="500">&ldquo;Generate Section 4.2 data encryption response from verified corporate security repository&rdquo;</text>
+
+    <!-- AI Output Box -->
+    <rect x="0" y="70" width="740" height="180" rx="10" fill="#0b1120" stroke="#1e293b" stroke-width="1.2"/>
+    <rect x="0" y="70" width="740" height="32" rx="10" fill="#1e293b" fill-opacity="0.5"/>
+    <text x="20" y="91" fill="#34d399" font-family="system-ui, sans-serif" font-size="11" font-weight="700">&check; VERIFIED GENERATION &bull; 100% GROUNDED</text>
+    <text x="620" y="91" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Confidence: 99.4%</text>
+
+    <!-- Response Text with Citations -->
+    <text x="20" y="130" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="13" line-height="1.5">
+      &ldquo;All customer transactional data in transit is encrypted using TLS 1.3 and stored in isolated VPC partitions
+    </text>
+    <rect x="680" y="117" width="28" height="18" rx="4" fill="#2563eb" fill-opacity="0.4"/>
+    <text x="686" y="130" fill="#93c5fd" font-family="system-ui, sans-serif" font-size="11" font-weight="700">[1]</text>
+
+    <text x="20" y="158" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="13">
+      Database volumes are encrypted at rest with customer-managed KMS keys. Automated backups are mirrored daily
+    </text>
+    <rect x="705" y="145" width="28" height="18" rx="4" fill="#2563eb" fill-opacity="0.4"/>
+    <text x="711" y="158" fill="#93c5fd" font-family="system-ui, sans-serif" font-size="11" font-weight="700">[2]</text>
+
+    <text x="20" y="186" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="13">
+      across dual availability zones, guaranteeing an RPO of &lt; 5 minutes and an RTO of &lt; 1 hour.&rdquo;
+    </text>
+
+    <!-- Citations Card Group -->
+    <rect x="0" y="264" width="740" height="110" rx="10" fill="#1e293b" fill-opacity="0.4" stroke="#334155" stroke-width="1"/>
+    <text x="20" y="290" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">VERIFIED SOURCE CITATIONS (AUDIT TRAIL):</text>
+
+    <!-- Citation 1 -->
+    <rect x="20" y="302" width="340" height="56" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="32" y="324" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="11" font-weight="700">[1] SOC2_TypeII_Audit_2026.pdf</text>
+    <text x="32" y="344" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Section 4.2 &bull; Page 14 &bull; Verified 99.4% Match</text>
+
+    <!-- Citation 2 -->
+    <rect x="380" y="302" width="340" height="56" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="392" y="324" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="11" font-weight="700">[2] Oracle_OCI_DR_Policy.md</text>
+    <text x="392" y="344" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Section 2.1 &bull; Recovery SLAs &bull; Immutable Source</text>
+  </g>
+</svg>

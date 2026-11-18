@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="bar-red" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#f87171"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg1)"/>
+  <rect x="0.5" y="0.5" width="799" height="499" fill="none" stroke="#1e293b" stroke-width="1" rx="14"/>
+
+  <!-- Window Header -->
+  <rect x="0" y="0" width="800" height="46" fill="#090d16" fill-opacity="0.9"/>
+  <line x1="0" y1="46" x2="800" y2="46" stroke="#1e293b" stroke-width="1"/>
+  <circle cx="24" cy="23" r="5" fill="#ef4444"/>
+  <circle cx="40" cy="23" r="5" fill="#f59e0b"/>
+  <circle cx="56" cy="23" r="5" fill="#10b981"/>
+  <text x="80" y="27" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">AARK DIAGNOSTIC AUDIT &bull; ERP &amp; WORKFLOW FRICTION MAP</text>
+
+  <rect x="625" y="13" width="150" height="22" rx="11" fill="#ef4444" fill-opacity="0.12" stroke="#ef4444" stroke-width="1" stroke-opacity="0.4"/>
+  <circle cx="639" cy="24" r="3.5" fill="#ef4444"/>
+  <text x="649" y="27.5" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="10" font-weight="700">42.5 HRS/WK FRICTION</text>
+
+  <!-- 3 Top Metric Cards -->
+  <g transform="translate(30, 66)">
+    <!-- Card 1 -->
+    <rect x="0" y="0" width="232" height="76" rx="10" fill="#1e293b" fill-opacity="0.5" stroke="#334155" stroke-width="1"/>
+    <text x="16" y="26" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">WASTED OPERATIONAL TIME</text>
+    <text x="16" y="56" fill="#ef4444" font-family="system-ui, sans-serif" font-size="24" font-weight="800">42.5 hrs<tspan font-size="13" fill="#64748b" font-weight="500"> / week</tspan></text>
+
+    <!-- Card 2 -->
+    <rect x="252" y="0" width="232" height="76" rx="10" fill="#1e293b" fill-opacity="0.5" stroke="#334155" stroke-width="1"/>
+    <text x="268" y="26" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">DISCONNECTED SILOS</text>
+    <text x="268" y="56" fill="#f59e0b" font-family="system-ui, sans-serif" font-size="24" font-weight="800">6 Systems<tspan font-size="13" fill="#64748b" font-weight="500"> isolated</tspan></text>
+
+    <!-- Card 3 -->
+    <rect x="504" y="0" width="236" height="76" rx="10" fill="#1e293b" fill-opacity="0.5" stroke="#334155" stroke-width="1"/>
+    <text x="520" y="26" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">EXECUTIVE DATA LAG</text>
+    <text x="520" y="56" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="24" font-weight="800">72 Hours<tspan font-size="13" fill="#64748b" font-weight="500"> latency</tspan></text>
+  </g>
+
+  <!-- Systems Inspection Table -->
+  <g transform="translate(30, 162)">
+    <rect x="0" y="0" width="740" height="280" rx="10" fill="#0b1120" stroke="#1e293b" stroke-width="1"/>
+    <rect x="0" y="0" width="740" height="36" rx="10" fill="#1e293b" fill-opacity="0.7"/>
+    <line x1="0" y1="36" x2="740" y2="36" stroke="#334155" stroke-width="1"/>
+
+    <text x="20" y="23" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11" font-weight="700">AUDITED ENTERPRISE SYSTEM</text>
+    <text x="250" y="23" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11" font-weight="700">DETECTED FRICTION BOTTLENECK</text>
+    <text x="520" y="23" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11" font-weight="700">WEEKLY WASTE</text>
+    <text x="640" y="23" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11" font-weight="700">SEVERITY</text>
+
+    <!-- Row 1 -->
+    <text x="20" y="68" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Oracle EBS 12.2 (Finance)</text>
+    <text x="20" y="86" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">GL_JE_LINES manual ledger export</text>
+    <text x="250" y="74" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">15-hour Monday reconciliation across spreadsheets</text>
+    <text x="520" y="74" fill="#f87171" font-family="system-ui, sans-serif" font-size="13" font-weight="700">15.0 hrs</text>
+    <rect x="635" y="60" width="85" height="22" rx="4" fill="#ef4444" fill-opacity="0.2"/>
+    <text x="645" y="75" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="10" font-weight="700">CRITICAL</text>
+    <line x1="20" y1="102" x2="720" y2="102" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Row 2 -->
+    <text x="20" y="134" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Salesforce CRM (Pipeline)</text>
+    <text x="20" y="152" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Opportunity &amp; quote discounting</text>
+    <text x="250" y="140" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Quotes stall 3+ days waiting for manual ERP margin approval</text>
+    <text x="520" y="140" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="13" font-weight="700">12.0 hrs</text>
+    <rect x="635" y="126" width="85" height="22" rx="4" fill="#f59e0b" fill-opacity="0.2"/>
+    <text x="647" y="141" fill="#fde68a" font-family="system-ui, sans-serif" font-size="10" font-weight="700">HIGH LAG</text>
+    <line x1="20" y1="168" x2="720" y2="168" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Row 3 -->
+    <text x="20" y="200" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Executive PDF &amp; Workbooks</text>
+    <text x="20" y="218" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">5 departmental Excel reporting silos</text>
+    <text x="250" y="206" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">67% of data leaders distrust reports; keying numbers manually</text>
+    <text x="520" y="206" fill="#f87171" font-family="system-ui, sans-serif" font-size="13" font-weight="700">15.5 hrs</text>
+    <rect x="635" y="192" width="85" height="22" rx="4" fill="#ef4444" fill-opacity="0.2"/>
+    <text x="645" y="207" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="10" font-weight="700">CRITICAL</text>
+    <line x1="20" y1="234" x2="720" y2="234" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Summary Footnote -->
+    <text x="20" y="260" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">&bull; Diagnostic Finding: 2-3 week architectural roadmap required before writing production code.</text>
+  </g>
+</svg>
