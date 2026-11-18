@@ -35,8 +35,9 @@
 
     function toggleNav(forceState) {
       isNavOpen = typeof forceState === 'boolean' ? forceState : !isNavOpen;
-      nav.setAttribute('data-nav-status', isNavOpen ? 'open' : 'closed');
+      nav.setAttribute('data-nav-status', isNavOpen ? 'active' : 'closed');
       toggleBtn.setAttribute('aria-expanded', isNavOpen ? 'true' : 'false');
+      document.body.style.overflow = isNavOpen ? 'hidden' : '';
     }
 
     toggleBtn.addEventListener('click', (e) => {
