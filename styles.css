@@ -2736,7 +2736,7 @@ button {
   margin-bottom: 44px;
 }
 
-/* Compact Zoom Card (max-width: 300px, aspect-ratio: 267 / 270) */
+/* Compact Zoom Card Component */
 .fwrd-zoom-card {
   position: relative;
   width: 100%;
@@ -2751,13 +2751,13 @@ button {
   justify-content: center;
   box-shadow: 0 4px 18px rgba(9, 13, 22, 0.05);
   transform: translateZ(0);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease, border-color 0.4s ease;
   user-select: none;
 }
 
 .fwrd-zoom-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(16, 8, 39, 0.12);
+  box-shadow: 0 16px 36px rgba(16, 8, 39, 0.14);
 }
 
 /* Specific Card Outer Wrappers with distinct soft backgrounds */
@@ -2774,6 +2774,29 @@ button {
 .fwrd-zoom-card--yellow {
   background-color: #dbeafe;
   border: 1px solid #bfdbfe;
+}
+
+/* ==========================================================================
+   FULL BOX COVERAGE ON HOVER & ACTIVE
+   Outer container background-color transitions smoothly to match the dark silhouette,
+   guaranteeing 100% solid seamless coverage with zero light margins bleeding through!
+   ========================================================================== */
+.fwrd-zoom-card--purple:hover,
+.fwrd-zoom-card--purple.is-active {
+  background-color: #0f172a !important;
+  border-color: #0f172a !important;
+}
+
+.fwrd-zoom-card--pink:hover,
+.fwrd-zoom-card--pink.is-active {
+  background-color: #172554 !important;
+  border-color: #172554 !important;
+}
+
+.fwrd-zoom-card--yellow:hover,
+.fwrd-zoom-card--yellow.is-active {
+  background-color: #1e40af !important;
+  border-color: #1e40af !important;
 }
 
 /* Background Notched Silhouette SVG */
@@ -2806,6 +2829,22 @@ button {
   transform-box: view-box;
   transform-origin: 22.5px 22.5px;
   will-change: transform;
+}
+
+/* ==========================================================================
+   HOVER & ACTIVE MICRO-INTERACTIONS
+   - Silhouette scales up by 3.5, completely covering the box
+   - Play/Badge icon in top-left scales up by 1.5, popping cleanly on dark
+   - Title fades out, description fades in with perfect margins
+   ========================================================================== */
+.fwrd-zoom-card:hover .fwrd-background path,
+.fwrd-zoom-card.is-active .fwrd-background path {
+  transform: scale(3.5);
+}
+
+.fwrd-zoom-card:hover .fwrd-icon,
+.fwrd-zoom-card.is-active .fwrd-icon {
+  transform: scale(1.5);
 }
 
 /* Card Title Layer (Default visible) */
@@ -2841,6 +2880,13 @@ button {
   color: #ffffff;
 }
 
+.fwrd-zoom-card:hover .fwrd-zoom-card__title-layer,
+.fwrd-zoom-card.is-active .fwrd-zoom-card__title-layer {
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+}
+
 /* Card Body / Description Layer (Default hidden) */
 .fwrd-zoom-card__text-layer {
   position: absolute;
@@ -2848,7 +2894,7 @@ button {
   z-index: 2;
   display: flex;
   align-items: flex-start;
-  padding: 56px 20px 32px;
+  padding: 66px 22px 34px;
   opacity: 0;
   transform: translateY(8px);
   pointer-events: none;
@@ -2858,7 +2904,7 @@ button {
 .fwrd-zoom-card__desc {
   font-family: var(--font-body, sans-serif);
   font-size: clamp(0.82rem, 1vw, 0.88rem);
-  line-height: 1.5;
+  line-height: 1.55;
   font-weight: 500;
   margin: 0;
 }
@@ -2869,30 +2915,6 @@ button {
   color: #ffffff;
 }
 
-/* ==========================================================================
-   HOVER & ACTIVE MICRO-INTERACTIONS
-   - Silhouette scales up by 3, cleanly covering the entire box
-   - Play/Badge icon in top-left scales up by 1.5
-   - Title fades out, description fades in
-   - Plus flips to Minus
-   ========================================================================== */
-.fwrd-zoom-card:hover .fwrd-background path,
-.fwrd-zoom-card.is-active .fwrd-background path {
-  transform: scale(3);
-}
-
-.fwrd-zoom-card:hover .fwrd-icon,
-.fwrd-zoom-card.is-active .fwrd-icon {
-  transform: scale(1.5);
-}
-
-.fwrd-zoom-card:hover .fwrd-zoom-card__title-layer,
-.fwrd-zoom-card.is-active .fwrd-zoom-card__title-layer {
-  opacity: 0;
-  transform: translateY(-8px);
-  pointer-events: none;
-}
-
 .fwrd-zoom-card:hover .fwrd-zoom-card__text-layer,
 .fwrd-zoom-card.is-active .fwrd-zoom-card__text-layer {
   opacity: 1;
@@ -2900,23 +2922,35 @@ button {
   pointer-events: auto;
 }
 
-/* Corner Cutout Toggle Button */
+/* ==========================================================================
+   FLOATING CORNER TOGGLE BUTTON (1:1 Ataccama Match)
+   Pure white floating circle, borderless, with crisp dark minus line
+   ========================================================================== */
 .fwrd-zoom-card__toggle {
   position: absolute;
-  bottom: 12px;
-  right: 12px;
+  bottom: 14px;
+  right: 14px;
   z-index: 3;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: #ffffff;
+  background: #ffffff !important;
+  border: none !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16) !important;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
   cursor: pointer;
-  border: 1px solid #bfdbfe;
+}
+
+.fwrd-zoom-card__toggle-plus,
+.fwrd-zoom-card__toggle-minus {
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.fwrd-zoom-card__toggle-minus {
+  display: none;
 }
 
 .fwrd-zoom-card:hover .fwrd-zoom-card__toggle-plus,
@@ -2931,18 +2965,15 @@ button {
 
 .fwrd-zoom-card:hover .fwrd-zoom-card__toggle,
 .fwrd-zoom-card.is-active .fwrd-zoom-card__toggle {
-  transform: rotate(180deg);
-  background: #1e40af;
-  border-color: #1e40af;
+  transform: rotate(180deg) scale(1.08);
+  background: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.24) !important;
 }
 
-.fwrd-zoom-card:hover .fwrd-zoom-card__toggle-minus line,
-.fwrd-zoom-card.is-active .fwrd-zoom-card__toggle-minus line {
-  stroke: #ffffff;
-}
-
-.fwrd-zoom-card__toggle-minus {
-  display: none;
+.fwrd-zoom-card__toggle-plus path,
+.fwrd-zoom-card__toggle-minus line {
+  stroke: #090d16 !important;
+  stroke-width: 2.4 !important;
 }
 
 /* Lower Stat Banner (67% Callout) - Matching the 960px width */
