@@ -15,7 +15,7 @@
   <circle cx="24" cy="23" r="5" fill="#ef4444"/>
   <circle cx="40" cy="23" r="5" fill="#f59e0b"/>
   <circle cx="56" cy="23" r="5" fill="#10b981"/>
-  <text x="80" y="27" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">AARK EXECUTIVE HEALTH DASHBOARD &bull; PRODUCTION CUTOVER SUCCESS</text>
+  <text x="80" y="27" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">AARK EXECUTIVE HEALTH DASHBOARD &#8226; PRODUCTION CUTOVER SUCCESS</text>
 
   <rect x="625" y="13" width="150" height="22" rx="11" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="1" stroke-opacity="0.4"/>
   <circle cx="639" cy="24" r="3.5" fill="#10b981"/>
@@ -27,19 +27,19 @@
     <rect x="0" y="0" width="232" height="96" rx="10" fill="#1e293b" fill-opacity="0.6" stroke="#10b981" stroke-width="1"/>
     <text x="16" y="28" fill="#34d399" font-family="system-ui, sans-serif" font-size="11" font-weight="700">OPERATIONAL HOURS SAVED</text>
     <text x="16" y="66" fill="#ffffff" font-family="system-ui, sans-serif" font-size="32" font-weight="800">42.5 hrs</text>
-    <text x="16" y="86" fill="#10b981" font-family="system-ui, sans-serif" font-size="11" font-weight="600">&check; Target fully eliminated</text>
+    <text x="16" y="86" fill="#10b981" font-family="system-ui, sans-serif" font-size="11" font-weight="600">&#10003; Target fully eliminated</text>
 
     <!-- KPI 2 -->
     <rect x="252" y="0" width="232" height="96" rx="10" fill="#1e293b" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1"/>
     <text x="268" y="28" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="11" font-weight="700">RECONCILIATION DEFECTS</text>
     <text x="268" y="66" fill="#ffffff" font-family="system-ui, sans-serif" font-size="32" font-weight="800">0.0%</text>
-    <text x="268" y="86" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="11" font-weight="600">&check; 100% Data integrity rate</text>
+    <text x="268" y="86" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="11" font-weight="600">&#10003; 100% Data integrity rate</text>
 
     <!-- KPI 3 -->
     <rect x="504" y="0" width="236" height="96" rx="10" fill="#1e293b" fill-opacity="0.6" stroke="#8b5cf6" stroke-width="1"/>
     <text x="520" y="28" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="11" font-weight="700">CLIENT TEAM HANDOVER</text>
     <text x="520" y="66" fill="#ffffff" font-family="system-ui, sans-serif" font-size="32" font-weight="800">100%</text>
-    <text x="520" y="86" fill="#c4b5fd" font-family="system-ui, sans-serif" font-size="11" font-weight="600">&check; Code &amp; docs transferred</text>
+    <text x="520" y="86" fill="#c4b5fd" font-family="system-ui, sans-serif" font-size="11" font-weight="600">&#10003; Code &amp; docs transferred</text>
   </g>
 
   <!-- Handover Checklist Card -->
@@ -70,6 +70,6 @@
 
     <!-- Footer guarantee -->
     <rect x="0" y="215" width="740" height="40" rx="10" fill="#1e293b" fill-opacity="0.4"/>
-    <text x="20" y="240" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">&bull; The AARK Promise: Production releases in 2 to 4 weeks. Working software. Total operational velocity.</text>
+    <text x="20" y="240" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">&#8226; The AARK Promise: Production releases in 2 to 4 weeks. Working software. Total operational velocity.</text>
   </g>
 </svg>

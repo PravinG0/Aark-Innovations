@@ -15,11 +15,11 @@
   <circle cx="24" cy="23" r="5" fill="#ef4444"/>
   <circle cx="40" cy="23" r="5" fill="#f59e0b"/>
   <circle cx="56" cy="23" r="5" fill="#10b981"/>
-  <text x="80" y="27" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">UNIFIED LAKEHOUSE SCHEMA SYNC &bull; ORACLE &harr; SNOWFLAKE</text>
+  <text x="80" y="27" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">UNIFIED LAKEHOUSE SCHEMA SYNC &#8226; ORACLE &#8596; SNOWFLAKE</text>
 
   <rect x="625" y="13" width="150" height="22" rx="11" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.4"/>
   <circle cx="639" cy="24" r="3.5" fill="#3b82f6"/>
-  <text x="649" y="27.5" fill="#93c5fd" font-family="system-ui, sans-serif" font-size="10" font-weight="700">1.2M ROWS &bull; 0.4s LAG</text>
+  <text x="649" y="27.5" fill="#93c5fd" font-family="system-ui, sans-serif" font-size="10" font-weight="700">1.2M ROWS &#8226; 0.4s LAG</text>
 
   <!-- 3 Stage Node Diagram -->
   <g transform="translate(30, 66)">
@@ -27,8 +27,8 @@
     <rect x="0" y="0" width="220" height="110" rx="10" fill="#1e293b" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.2"/>
     <text x="16" y="26" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">TRANSACTIONAL ERP CORE</text>
     <text x="16" y="50" fill="#ffffff" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Oracle Fusion / EBS</text>
-    <text x="16" y="74" fill="#94a3b8" font-family="monospace" font-size="10">&bull; GL_BALANCES (420k)</text>
-    <text x="16" y="92" fill="#94a3b8" font-family="monospace" font-size="10">&bull; AP_INVOICES_ALL (812k)</text>
+    <text x="16" y="74" fill="#94a3b8" font-family="monospace" font-size="10">&#8226; GL_BALANCES (420k)</text>
+    <text x="16" y="92" fill="#94a3b8" font-family="monospace" font-size="10">&#8226; AP_INVOICES_ALL (812k)</text>
 
     <!-- Arrow 1 -->
     <line x1="220" y1="55" x2="260" y2="55" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4 2"/>
@@ -38,8 +38,8 @@
     <rect x="260" y="0" width="220" height="110" rx="10" fill="#1e293b" fill-opacity="0.6" stroke="#10b981" stroke-width="1.2"/>
     <text x="276" y="26" fill="#34d399" font-family="system-ui, sans-serif" font-size="11" font-weight="700">STREAMING &amp; TRANSFORMATION</text>
     <text x="276" y="50" fill="#ffffff" font-family="system-ui, sans-serif" font-size="15" font-weight="700">dbt Core / OCI Streams</text>
-    <text x="276" y="74" fill="#94a3b8" font-family="monospace" font-size="10">&bull; Auto-deduplication: PASS</text>
-    <text x="276" y="92" fill="#94a3b8" font-family="monospace" font-size="10">&bull; Schema drift: 0 defects</text>
+    <text x="276" y="74" fill="#94a3b8" font-family="monospace" font-size="10">&#8226; Auto-deduplication: PASS</text>
+    <text x="276" y="92" fill="#94a3b8" font-family="monospace" font-size="10">&#8226; Schema drift: 0 defects</text>
 
     <!-- Arrow 2 -->
     <line x1="480" y1="55" x2="520" y2="55" stroke="#10b981" stroke-width="2" stroke-dasharray="4 2"/>
@@ -49,8 +49,8 @@
     <rect x="520" y="0" width="220" height="110" rx="10" fill="#1e293b" fill-opacity="0.6" stroke="#8b5cf6" stroke-width="1.2"/>
     <text x="536" y="26" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="11" font-weight="700">GOLD ENTERPRISE LAKE</text>
     <text x="536" y="50" fill="#ffffff" font-family="system-ui, sans-serif" font-size="15" font-weight="700">Snowflake / Databricks</text>
-    <text x="536" y="74" fill="#94a3b8" font-family="monospace" font-size="10">&bull; 1 Unified KPI Source</text>
-    <text x="536" y="92" fill="#94a3b8" font-family="monospace" font-size="10">&bull; 100% Board Certified</text>
+    <text x="536" y="74" fill="#94a3b8" font-family="monospace" font-size="10">&#8226; 1 Unified KPI Source</text>
+    <text x="536" y="92" fill="#94a3b8" font-family="monospace" font-size="10">&#8226; 100% Board Certified</text>
   </g>
 
   <!-- Live Table Log -->
@@ -68,24 +68,24 @@
     <text x="140" y="62" fill="#ffffff" font-family="monospace" font-size="11">ORCL_EBS.GL_BALANCES</text>
     <text x="310" y="62" fill="#60a5fa" font-family="monospace" font-size="11">SNOW_GOLD.DIM_FINANCE</text>
     <text x="490" y="62" fill="#34d399" font-family="monospace" font-size="11">0.38s</text>
-    <text x="610" y="62" fill="#10b981" font-family="monospace" font-size="11">&check; RECONCILED</text>
+    <text x="610" y="62" fill="#10b981" font-family="monospace" font-size="11">&#10003; RECONCILED</text>
     <line x1="20" y1="78" x2="720" y2="78" stroke="#1e293b" stroke-width="1"/>
 
     <text x="20" y="106" fill="#94a3b8" font-family="monospace" font-size="11">TX-984103</text>
     <text x="140" y="106" fill="#ffffff" font-family="monospace" font-size="11">ORCL_EBS.AP_INVOICES</text>
     <text x="310" y="106" fill="#60a5fa" font-family="monospace" font-size="11">SNOW_GOLD.FCT_PAYABLES</text>
     <text x="490" y="106" fill="#34d399" font-family="monospace" font-size="11">0.42s</text>
-    <text x="610" y="106" fill="#10b981" font-family="monospace" font-size="11">&check; RECONCILED</text>
+    <text x="610" y="106" fill="#10b981" font-family="monospace" font-size="11">&#10003; RECONCILED</text>
     <line x1="20" y1="122" x2="720" y2="122" stroke="#1e293b" stroke-width="1"/>
 
     <text x="20" y="150" fill="#94a3b8" font-family="monospace" font-size="11">TX-984104</text>
     <text x="140" y="150" fill="#ffffff" font-family="monospace" font-size="11">SFDC_CRM.OPPORTUNITY</text>
     <text x="310" y="150" fill="#60a5fa" font-family="monospace" font-size="11">SNOW_GOLD.DIM_REVENUE</text>
     <text x="490" y="150" fill="#34d399" font-family="monospace" font-size="11">0.29s</text>
-    <text x="610" y="150" fill="#10b981" font-family="monospace" font-size="11">&check; RECONCILED</text>
+    <text x="610" y="150" fill="#10b981" font-family="monospace" font-size="11">&#10003; RECONCILED</text>
 
     <!-- Bottom summary banner -->
     <rect x="0" y="180" width="740" height="60" rx="10" fill="#1e293b" fill-opacity="0.4"/>
-    <text x="20" y="215" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">&bull; Result: Finance team eliminates 11 hours of manual Monday reporting every week.</text>
+    <text x="20" y="215" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">&#8226; Result: Finance team eliminates 11 hours of manual Monday reporting every week.</text>
   </g>
 </svg>

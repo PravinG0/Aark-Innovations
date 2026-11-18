@@ -15,7 +15,7 @@
   <circle cx="24" cy="23" r="5" fill="#ef4444"/>
   <circle cx="40" cy="23" r="5" fill="#f59e0b"/>
   <circle cx="56" cy="23" r="5" fill="#10b981"/>
-  <text x="80" y="27" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">AARK MILESTONE ROADMAP &bull; FIXED-SCOPE ARCHITECTURE PLAN</text>
+  <text x="80" y="27" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">AARK MILESTONE ROADMAP &#8226; FIXED-SCOPE ARCHITECTURE PLAN</text>
 
   <rect x="615" y="13" width="160" height="22" rx="11" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="1" stroke-opacity="0.4"/>
   <circle cx="629" cy="24" r="3.5" fill="#10b981"/>
@@ -25,15 +25,15 @@
   <g transform="translate(30, 66)">
     <!-- Milestone 1 -->
     <rect x="0" y="0" width="740" height="66" rx="8" fill="#1e293b" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.2"/>
-    <text x="20" y="28" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="11" font-weight="700">SPRINT 01 &bull; WEEKS 1&ndash;2</text>
+    <text x="20" y="28" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="11" font-weight="700">SPRINT 01 &#8226; WEEKS 1&#8211;2</text>
     <text x="20" y="48" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="700">Architecture Blueprint &amp; Data Schema Map</text>
     <text x="440" y="38" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">ERP inventory, table audit &amp; security governance</text>
     <rect x="630" y="20" width="90" height="26" rx="13" fill="#10b981" fill-opacity="0.2"/>
-    <text x="643" y="37" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="11" font-weight="700">&check; SIGNED OFF</text>
+    <text x="643" y="37" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="11" font-weight="700">&#10003; SIGNED OFF</text>
 
     <!-- Milestone 2 -->
     <rect x="0" y="80" width="740" height="66" rx="8" fill="#1e293b" fill-opacity="0.4" stroke="#334155" stroke-width="1"/>
-    <text x="20" y="108" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">SPRINT 02 &bull; WEEKS 3&ndash;4</text>
+    <text x="20" y="108" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">SPRINT 02 &#8226; WEEKS 3&#8211;4</text>
     <text x="20" y="128" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="700">Oracle Fusion &amp; Lakehouse Pipeline Sync</text>
     <text x="440" y="118" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Snowflake / Databricks automated dbt ingestion</text>
     <rect x="630" y="100" width="90" height="26" rx="13" fill="#3b82f6" fill-opacity="0.2"/>
@@ -41,7 +41,7 @@
 
     <!-- Milestone 3 -->
     <rect x="0" y="160" width="740" height="66" rx="8" fill="#1e293b" fill-opacity="0.4" stroke="#334155" stroke-width="1"/>
-    <text x="20" y="188" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">SPRINT 03 &bull; WEEKS 5&ndash;6</text>
+    <text x="20" y="188" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">SPRINT 03 &#8226; WEEKS 5&#8211;6</text>
     <text x="20" y="208" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="700">Applied AI &amp; Automated Quote Workflows</text>
     <text x="440" y="198" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Private RAG proposal assistant &amp; dynamic CPQ</text>
     <rect x="630" y="180" width="90" height="26" rx="13" fill="#6366f1" fill-opacity="0.2"/>
@@ -49,7 +49,7 @@
 
     <!-- Milestone 4 -->
     <rect x="0" y="240" width="740" height="66" rx="8" fill="#1e293b" fill-opacity="0.4" stroke="#334155" stroke-width="1"/>
-    <text x="20" y="268" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">SPRINT 04 &bull; WEEK 7</text>
+    <text x="20" y="268" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">SPRINT 04 &#8226; WEEK 7</text>
     <text x="20" y="288" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="700">Production Cutover &amp; Team Handover</text>
     <text x="440" y="278" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Full documentation, repository transfer &amp; support</text>
     <rect x="630" y="260" width="90" height="26" rx="13" fill="#10b981" fill-opacity="0.2"/>
