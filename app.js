@@ -16,6 +16,7 @@
     initPlatformRowInteractions();
     initZoomCards();
     initBannerInteractions();
+    initJourney();
   });
 
   /* =========================================================================
@@ -205,6 +206,180 @@
         }, 250);
       });
     });
+  }
+
+  /* =========================================================================
+     6. SECTION 10 JOURNEY CONTROLLER (FROM AARKINN 7)
+     Scroll-driven SVG Serpentine Progress & Traveling Pulse Radar Marker
+     ========================================================================= */
+  function initJourney() {
+    const root = document.querySelector('.journey');
+    if (!root) return;
+
+    const svg = root.querySelector('.journey-svg');
+    const progress = root.querySelector('.journey-svg-progress');
+    const marker = root.querySelector('.journey-marker');
+    const stage = root.querySelector('.journey-stage');
+    const nodes = Array.from(root.querySelectorAll('.journey-node'));
+    const cards = Array.from(root.querySelectorAll('.journey-card'));
+
+    if (!svg || !progress || !stage || nodes.length === 0) return;
+
+    const L = progress.getTotalLength();
+    svg.style.setProperty('--path-len', L);
+    progress.style.strokeDasharray = L;
+
+    const vb = svg.viewBox && svg.viewBox.baseVal && svg.viewBox.baseVal.width ? svg.viewBox.baseVal.width : 302;
+    let nodeCentre = [];
+    let nodeLen = [];
+
+    // Compute exact center coordinates of each milestone node in SVG user units
+    const measure = () => {
+      const cs = getComputedStyle(svg);
+      const sx = parseFloat(cs.left) || 0;
+      const sy = parseFloat(cs.top) || 0;
+      const sw = parseFloat(cs.width) || vb;
+      const scale = sw / vb; // CSS px per SVG user unit
+
+      nodeCentre = nodes.map(n => ({
+        x: (n.offsetLeft + n.offsetWidth / 2 - sx) / scale,
+        y: (n.offsetTop + n.offsetHeight / 2 - sy) / scale
+      }));
+
+      // Map each node center to nearest sampled point along the curve length
+      nodeLen = nodeCentre.map(c => {
+        let best = 0;
+        let bd = Infinity;
+        for (let l = 0; l <= L; l += 4) {
+          const pt = progress.getPointAtLength(l);
+          const d = (pt.x - c.x) * (pt.x - c.x) + (pt.y - c.y) * (pt.y - c.y);
+          if (d < bd) {
+            bd = d;
+            best = l;
+          }
+        }
+        return best;
+      });
+    };
+
+    measure();
+
+    // Position the 4-ring radar marker on the target milestone node
+    const placeMarker = (i) => {
+      const c = nodeCentre[i];
+      if (!c || !marker) return;
+      marker.setAttribute('transform', `translate(${c.x.toFixed(2)} ${c.y.toFixed(2)})`);
+    };
+
+    let lastActive = -1;
+    const remeasure = () => {
+      measure();
+      if (lastActive >= 0) placeMarker(lastActive);
+    };
+
+    window.addEventListener('resize', remeasure);
+    window.addEventListener('load', remeasure);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(remeasure);
+    }
+
+    // Smooth click navigation on milestone nodes
+    nodes.forEach((node, idx) => {
+      node.style.cursor = 'pointer';
+      node.addEventListener('click', () => {
+        const card = cards[idx];
+        if (card) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    });
+
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+
+      // Mobile: fill the connector under each card as user scrolls
+      const fl = window.innerHeight * 0.6;
+      cards.forEach(c => {
+        const cr = c.getBoundingClientRect();
+        const f = Math.max(0, Math.min(1, (fl - cr.bottom) / 48)).toFixed(3);
+        if (c.__fill !== f) {
+          c.__fill = f;
+          c.style.setProperty('--fill', f);
+        }
+      });
+
+      const rect = svg.getBoundingClientRect();
+      const focus = window.innerHeight * 0.55; // viewport reading line
+
+      // Fallback for stacked view on smaller viewports (< 1200px)
+      if (!rect.height || window.innerWidth < 1200) {
+        let act = -1;
+        cards.forEach((c, i) => {
+          if (c.getBoundingClientRect().top < window.innerHeight * 0.6) act = i;
+        });
+        cards.forEach((c, i) => {
+          c.classList.toggle('is-active', i === act);
+        });
+        return;
+      }
+
+      const y = focus - rect.top; // pixels scrolled from path top
+      const p = Math.max(0, Math.min(1, y / rect.height));
+      const len = p * L;
+      const dash = (L - len).toFixed(1);
+
+      if (progress.__dash !== dash) {
+        progress.__dash = dash;
+        progress.style.strokeDashoffset = dash;
+      }
+
+      // Determine currently active milestone node
+      let active = 0;
+      nodeLen.forEach((nl, i) => {
+        if (len >= nl - 2) active = i;
+      });
+
+      nodes.forEach((n, i) => {
+        n.classList.toggle('is-done', i < active);
+        n.classList.toggle('is-active', i === active);
+      });
+
+      cards.forEach((c, i) => {
+        c.classList.toggle('is-active', i === active);
+      });
+
+      // Animate radar marker transition to newly active milestone node
+      if (active !== lastActive) {
+        const first = lastActive === -1;
+        lastActive = active;
+        if (first) {
+          placeMarker(active);
+        } else {
+          marker.classList.add('is-hidden');
+          clearTimeout(marker._t);
+          marker._t = setTimeout(() => {
+            placeMarker(active);
+            marker.classList.remove('is-hidden');
+          }, 360);
+        }
+      }
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+
+    // Initial render
+    placeMarker(0);
+    update();
   }
 
 })();
