@@ -113,21 +113,30 @@
   --color-accent: #1e40af;
   --color-accent-light: #60a5fa;
 
-  /* Typography */
+  /* Typography: Global Unified Font Stack */
   --font-family: 'Endcap Grotesk', 'Hanken Grotesk', Hanken, Arial, sans-serif;
   --font-headings: 'Endcap Grotesk', 'Hanken Grotesk', Hanken, Arial, sans-serif;
   --font-body: 'Endcap Grotesk', 'Hanken Grotesk', Hanken, Arial, sans-serif;
+  --font-display: 'Endcap Grotesk', 'Hanken Grotesk', Hanken, Arial, sans-serif;
+  --font-serif: 'Endcap Grotesk', 'Hanken Grotesk', Hanken, Arial, sans-serif;
+  --font-main: 'Endcap Grotesk', 'Hanken Grotesk', Hanken, Arial, sans-serif;
+  --font-mono: 'Endcap Grotesk', 'Hanken Grotesk', Hanken, Arial, sans-serif;
 
   /* Animation Easing */
   --ease-cubic: cubic-bezier(0.625, 0.05, 0, 1);
   --ease-hover: cubic-bezier(0.675, 0.15, 0.1, 1);
 }
 
-/* --- Global Reset & Base Styles --- */
+/* --- Global Reset & Base Typography Styles --- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Endcap Grotesk', 'Hanken Grotesk', Hanken, Arial, sans-serif;
+}
+
+html, body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a, li {
+  font-family: 'Endcap Grotesk', 'Hanken Grotesk', Hanken, Arial, sans-serif;
 }
 
 html, body {
@@ -140,6 +149,25 @@ html, body {
   padding: 0;
   min-height: 100vh;
   line-height: 1.5;
+}
+
+/* =========================================================================
+   GLOBAL STANDARDIZED H2 SECTION HEADINGS
+   Unified across all sections: Section 4, 5, 6, 7, 10
+   ========================================================================= */
+h2,
+.re-section-head h2,
+#paths-title,
+#services-heading,
+.event-highlights__title,
+.display-title,
+.journey .journey-title,
+.journey-title {
+  font-family: 'Endcap Grotesk', 'Hanken Grotesk', Hanken, Arial, sans-serif !important;
+  font-size: clamp(2rem, 3.8vw, 3.2rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.03em !important;
 }
 
 a {
@@ -1457,7 +1485,7 @@ button {
 }
 
 .re-section-head h2 em {
-  font-family: var(--font-serif);
+  font-family: var(--font-headings);
   font-weight: 400;
   font-style: italic;
   letter-spacing: -0.04em;
@@ -3031,7 +3059,7 @@ button {
 
 /* Section 5 Typography inside SVGs */
 .mo-i-txt {
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-headings);
   font-size: 8px;
   font-weight: 700;
   fill: var(--ink, #181a17);
@@ -3069,7 +3097,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-headings);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -3092,7 +3120,7 @@ button {
 }
 
 .event-highlights__title {
-  font-family: var(--font-display, 'ClashGrotesk', sans-serif);
+  font-family: var(--font-headings);
   font-size: clamp(2rem, 3.8vw, 2.75rem);
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -3102,7 +3130,7 @@ button {
 }
 
 .event-highlights__subtitle {
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: clamp(0.95rem, 1.25vw, 1.05rem);
   color: #475569;
   line-height: 1.6;
@@ -3248,7 +3276,7 @@ button {
 }
 
 .fwrd-zoom-card__title {
-  font-family: var(--font-display, 'ClashGrotesk', sans-serif);
+  font-family: var(--font-headings);
   font-size: clamp(1.35rem, 1.7vw, 1.6rem);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -3290,7 +3318,7 @@ button {
 }
 
 .fwrd-zoom-card__desc {
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: clamp(0.84rem, 1vw, 0.9rem);
   line-height: 1.55;
   font-weight: 500;
@@ -3406,7 +3434,7 @@ button {
 }
 
 .stat-banner__heading {
-  font-family: var(--font-display, 'ClashGrotesk', sans-serif);
+  font-family: var(--font-headings);
   font-size: clamp(1.3rem, 1.8vw, 1.65rem);
   font-weight: 600;
   color: #ffffff;
@@ -3511,7 +3539,7 @@ button {
   align-items: center;
   gap: 64px;
   padding: 120px 0;
-  font-family: var(--font-body, 'Hanken Grotesk', sans-serif);
+  font-family: var(--font-body);
   color: #090d16;
   overflow: hidden;
   position: relative;
@@ -3553,7 +3581,7 @@ button {
   background: #eff6ff;
   border: 1px solid #bfdbfe;
   border-radius: 999px;
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -3564,7 +3592,7 @@ button {
 .journey .journey-title {
   margin: 0;
   color: #090d16;
-  font-family: var(--font-display, 'ClashGrotesk', sans-serif);
+  font-family: var(--font-headings);
   font-size: clamp(2rem, 3.2vw, 3.2rem);
   font-weight: 700;
   line-height: 1.15;
@@ -3814,7 +3842,7 @@ button {
 .journey .journey-card-title {
   margin: 0;
   color: #090d16;
-  font-family: var(--font-display, 'ClashGrotesk', sans-serif);
+  font-family: var(--font-headings);
   font-size: 1.15rem;
   font-weight: 700;
   line-height: 1.35;
@@ -3874,7 +3902,7 @@ button {
   gap: 8px;
   padding: 14px 28px;
   border-radius: 12px;
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -3900,7 +3928,7 @@ button {
   gap: 8px;
   padding: 14px 26px;
   border-radius: 12px;
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -4054,7 +4082,7 @@ button {
 }
 
 .display-title {
-  font-family: var(--font-display, 'ClashGrotesk', sans-serif);
+  font-family: var(--font-headings);
   font-size: clamp(2.8rem, 5.2vw, 4.8rem);
   font-weight: 800;
   line-height: 0.96;
@@ -4077,7 +4105,7 @@ button {
 }
 
 .hero-lead-text {
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: clamp(1.05rem, 1.25vw, 1.2rem);
   font-weight: 400;
   line-height: 1.6;
@@ -4100,7 +4128,7 @@ button {
   background-color: #1e40af;
   color: #ffffff;
   text-decoration: none;
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: 13.5px;
   letter-spacing: 0.04em;
@@ -4211,7 +4239,7 @@ button {
 }
 
 .card-title {
-  font-family: var(--font-display, 'ClashGrotesk', sans-serif);
+  font-family: var(--font-headings);
   font-size: 17px;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -4368,7 +4396,7 @@ button {
 }
 
 .system-tagline {
-  font-family: var(--font-display, 'ClashGrotesk', sans-serif);
+  font-family: var(--font-headings);
   font-size: clamp(1.05rem, 1.4vw, 1.35rem);
   font-weight: 800;
   letter-spacing: 0.08em;
