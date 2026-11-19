@@ -66,6 +66,22 @@
           mobileToggle.setAttribute('aria-expanded', 'false');
         });
       });
+
+      // Accessible keyboard escape and click-outside handler
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('is-open')) {
+          navMenu.classList.remove('is-open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          mobileToggle.focus();
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (navMenu.classList.contains('is-open') && !navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+          navMenu.classList.remove('is-open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
     }
   }
 

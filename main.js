@@ -99,22 +99,7 @@
     });
   }
 
-  // Mobile navigation menu toggle
-  const mobileToggle = document.getElementById('mobile-toggle');
-  const navMenu = document.getElementById('nav-menu');
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      const isOpen = navMenu.classList.toggle('is-open');
-      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-
-    navMenu.querySelectorAll('.nav-link, .dropdown-item').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('is-open');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
+  // Mobile navigation is handled in app.js initNavigation()
 
   // Initial call to align UI and particle colors
   updateThemeUI();
