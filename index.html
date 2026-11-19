@@ -4,374 +4,144 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AARK Innovations &mdash; Enterprise Systems That Run Your Business</title>
+  <!-- Google Fonts: Hanken Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="light-theme">
 
   <!-- =========================================================================
-       TWO-STEP NOTCH NAVIGATION (LIGHT THEME)
+       HEADER / NAVIGATION BAR (FROM AARKINN 9 HERO)
        ========================================================================= -->
-  <nav class="twostep-nav" id="twostep-nav" data-nav-status="closed" aria-label="Main Navigation">
-    <!-- Backdrop Blur Overlay -->
-    <div class="twostep-bg" id="nav-backdrop" aria-hidden="true"></div>
+    <!-- =========================================================================
+       HEADER / NAVIGATION BAR (DAPPER REFERENCE: FLOATING PILL NAVBAR)
+       Logo | Available Sections Only | "Talk to us [↗]" CTA Group
+       ========================================================================= -->
+  <header class="navbar" id="top-navbar">
+    <div class="nav-container">
+      <!-- Brand Logo -->
+      <a href="#top" class="brand-logo" aria-label="AARK Innovations Home">
+        <div class="logo-mark">
+          <img src="assets/aarkin-logo.png" alt="AARK Innovations Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text-group">
+          <span class="logo-text">AARK</span>
+          <span class="logo-subtext">Innovations</span>
+        </div>
+      </a>
 
-    <div class="twostep-wrap">
-      <div class="twostep-width">
-        <div class="twostep-bar">
-          <div class="twostep-back">
-            <div class="twostep-backBg"></div>
-          </div>
+      <!-- Center Navigation Links (Strictly Available Sections Only) -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Primary Navigation">
+        <a href="#practices" class="nav-link">Practices</a>
+        <a href="#platforms" class="nav-link">Platforms</a>
+        <a href="#problem" class="nav-link">Why Us</a>
+        <a href="#models" class="nav-link">Delivery Journey</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
 
-          <!-- Top Row: Logo | BOOK A 30-MIN SESSION | Hamburger -->
-          <div class="twostep-top">
-            <!-- Brand Logo -->
-            <a href="#top" class="twostep-logo" aria-label="AARK Innovations home">
-              <span class="twostep-logoWord">
-                <img src="assets/Aarkin logo.png" alt="AARK Innovations Logo" class="twostep-logoImg">
-                <span class="twostep-logoTextGroup">
-                  <span class="twostep-logoWordText">AARK INNOVATIONS</span>
-                  <span class="twostep-logoTagline">Enterprise Systems &bull; Cloud &bull; AI</span>
-                </span>
-              </span>
-            </a>
+      <!-- Right Action CTA Group: "Talk to us" + Theme Blue Square Arrow Box -->
+      <div class="nav-actions">
+        <a href="#contact" class="nav-cta-group" aria-label="Talk to us">
+          <span class="nav-cta-text">Talk to us</span>
+          <span class="nav-cta-icon" aria-hidden="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+          </span>
+        </a>
+      </div>
 
-            <!-- Right Controls -->
-            <div class="twostep-actions">
-              <a href="#contact" class="twostep-barCta">
-                Book a 30-Min Working Session
-              </a>
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
 
-              <!-- Hamburger / Close Toggle Button -->
-              <button class="twostep-toggle" id="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span class="twostep-toggleBar"></span>
-                <span class="twostep-toggleBar"></span>
-              </button>
-            </div>
-          </div><!-- /twostep-top -->
 
-          <div class="twostep-topLine" aria-hidden="true"></div>
+  <!-- =========================================================================
+       HERO SECTION (FROM AARKINN 9 HERO)
+       Streamline Engine, Vector Canvas & 3D Interactive Tech Pipeline
+       ========================================================================= -->
+  <main class="hero-wrapper" id="top">
+    <!-- Streamline Canvas for Aarkin "A" Logo and Flowing Tech Stream -->
+    <canvas id="webgl-canvas"></canvas>
 
-          <!-- Expanded Dropdown Menu -->
-          <div class="twostep-bottom" id="nav-dropdown">
-            <div class="twostep-bottomOverflow">
-              <div class="twostep-bottomInner">
-                <div class="twostep-bottomRow">
-                  
-                  <!-- Left: Links Column -->
-                  <div class="twostep-bottomCol">
-                    <div class="twostep-info">
-                      <ul class="twostep-ul">
-                        <li class="twostep-li">
-                          <a href="#practices" class="twostep-link">
-                            <span>Practices &amp; Services</span>
-                            <span class="nav-pill-badge">Core</span>
-                          </a>
-                        </li>
-                        <li class="twostep-li">
-                          <a href="#platforms" class="twostep-link">
-                            <span>Platforms We Master</span>
-                            <span class="nav-arr">&rsaquo;</span>
-                          </a>
-                        </li>
-                        <li class="twostep-li">
-                          <a href="#problem" class="twostep-link">
-                            <span>The Bottleneck (Why Us)</span>
-                            <span class="nav-arr">&rsaquo;</span>
-                          </a>
-                        </li>
-                        <li class="twostep-li">
-                          <a href="#services" class="twostep-link">
-                            <span>Detailed Solutions</span>
-                            <span class="nav-arr">&rsaquo;</span>
-                          </a>
-                        </li>
-                        <li class="twostep-li">
-                          <a href="#work" class="twostep-link">
-                            <span>Case Studies</span>
-                            <span class="nav-arr">&rsaquo;</span>
-                          </a>
-                        </li>
-                        <li class="twostep-li">
-                          <a href="#models" class="twostep-link">
-                            <span>Engagement Models</span>
-                            <span class="nav-arr">&rsaquo;</span>
-                          </a>
-                        </li>
-                        <li class="twostep-li">
-                          <a href="#faq" class="twostep-link">
-                            <span>FAQ</span>
-                            <span class="nav-arr">&rsaquo;</span>
-                          </a>
-                        </li>
-                      </ul>
+    <!-- Global Full-Width Stream Track (Allows 3D Tech Badges to Travel Across to the VERY END of the line) -->
+    <div class="global-stream-track" id="ticker-track"></div>
 
-                      <div class="twostep-small">
-                        <span class="social-link">hello@aarkinn.com</span>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link">LinkedIn</a>
-                        <span class="social-link">Fort Mill, SC &bull; Charlotte Metro</span>
-                      </div>
-                    </div>
-                  </div>
+    <!-- Hero Content Overlay -->
+    <div class="hero-container">
+      <!-- Left Visual Spacer (aligns with Aarkin Logo) -->
+      <div class="hero-visual-slot"></div>
 
-                  <!-- Right: Pillar Spotlight Card -->
-                  <div class="twostep-bottomCol">
-                    <aside class="menu-product-card">
-                      <div>
-                        <span class="product-eyebrow">Pillar 01 &mdash; Mission-Critical Core</span>
-                        <h3 class="product-name">Oracle ERP &amp; Cloud</h3>
-                        <p class="product-tagline">
-                          Modernize, streamline, and integrate the transactional backbone of your company without operational disruption. Fusion Cloud rollouts, EBS migration, and OIC real-time integrations.
-                        </p>
-                      </div>
+      <!-- Right Content Column -->
+      <div class="hero-content">
+        <!-- Eyebrow Pill -->
+        <div class="hero-eyebrow" role="note" aria-label="Senior Delivery Team — Mid-Market &amp; Enterprise Architecture">
+          <span class="eyebrow-beacon">
+            <span class="eyebrow-beacon-ping"></span>
+            <span class="eyebrow-beacon-core"></span>
+          </span>
+          <span class="eyebrow-tag">Senior Delivery Team</span>
+          <span class="eyebrow-sep" aria-hidden="true">&bull;</span>
+          <span class="eyebrow-label">Mid-Market &amp; Enterprise Architecture</span>
+          <span class="eyebrow-arrow" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
 
-                      <a href="#practices" class="product-learn-btn">
-                        <span>Explore All 3 Pillars</span>
-                        <span class="arr">&rarr;</span>
-                      </a>
-                    </aside>
-                  </div>
+        <h1 class="hero-title">
+          Enterprise Systems That Run Your Business,<br>
+          <span class="title-sub heading-accent">Not the Other Way Around.</span>
+        </h1>
 
-                </div><!-- /twostep-bottomRow -->
-              </div>
-            </div>
-          </div><!-- /twostep-bottom -->
+        <!-- Alignment anchor for the horizontal beam -->
+        <div class="stream-line-container" id="stream-container"></div>
 
-        </div><!-- /twostep-bar -->
+        <!-- Description Paragraph -->
+        <p class="hero-description">
+          AARK Innovations is the premier technical consulting partner for mid-market and enterprise organizations. We eliminate the costly operational friction between your core <strong>Oracle ERP systems</strong>, <strong>modern cloud data platforms</strong> (Snowflake, Databricks, AWS, Azure), and <strong>applied AI workflows</strong>.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-hero-primary">
+            <span class="btn-text">Schedule a Working Session</span>
+            <span class="btn-arrow-bubble" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M3.33337 8H12.6667" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 3.33331L12.6667 7.99998L8 12.6666" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+          <a href="#practices" class="btn btn-hero-secondary">
+            <span class="btn-text">Explore Practices (Deep-Dive)</span>
+            <span class="btn-arrow-bubble" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M8 3.33331V12.6666" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.6667 8L8 12.6666L3.33337 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        </div>
       </div>
     </div>
-  </nav><!-- /twostep-nav -->
+  </main>
 
-
-  <!-- =========================================================================
-       HERO SECTION (LIGHT THEME - CLEAN FULL-VIEW LAYOUT)
-       ========================================================================= -->
-  <section class="hero-hero" id="top">
-    <div class="hero-stage">
-
-      <!-- Viewport Card -->
-      <div class="hero-card">
-
-        <!-- Subtle Tech Grid & Ambient Glow for Light Theme -->
-        <div class="hero-grid-bg" aria-hidden="true"></div>
-        <div class="hero-glow-orb" aria-hidden="true"></div>
-
-        <!-- Hero Content -->
-        <div class="hero-content">
-
-          <!-- Two-Column Split: High-Impact Copy (Left) & Enterprise Architecture Visualizer (Right) -->
-          <div class="hero-split-grid">
-
-            <!-- Left Column: Copy & CTAs -->
-            <div class="hero-main-group">
-              
-              <!-- Pre-Headline Eyebrow Pill -->
-              <div class="hero-eyebrow-pill">
-                <span class="eyebrow-pulse" aria-hidden="true"></span>
-                <span>Senior Delivery Team &bull; Based in the Carolinas &bull; Serving Mid-Market &amp; Enterprise Across the US</span>
-              </div>
-
-              <!-- Main Headline (H1) -->
-              <h1 class="hero-headline">
-                Enterprise Systems That Run Your Business, 
-                <span class="headline-accent">Not the Other Way Around.</span>
-              </h1>
-
-              <!-- Supporting Sub-Headline -->
-              <p class="hero-subheadline">
-                <strong>AARK Innovations is the premier technical consulting partner for mid-market and enterprise organizations.</strong>
-                We eliminate the costly operational friction between your core <strong>Oracle ERP systems</strong>, 
-                <strong>modern cloud data platforms</strong> (Snowflake, Databricks, AWS, Azure), and <strong>applied AI workflows</strong>.
-                <span class="hero-subheadline-note">
-                  No junior handoffs. No vendor dogma. Just battle-tested architects who scope, build, deploy, and stay accountable for bottom-line results.
-                </span>
-              </p>
-
-              <!-- Call-to-Action Group -->
-              <div class="hero-cta-group">
-                <a href="#contact" class="hero-primary-btn">
-                  <span>Schedule an Architectural Working Session</span>
-                  <span class="btn-arrow" aria-hidden="true">&rarr;</span>
-                </a>
-                <a href="#practices" class="hero-secondary-btn">
-                  <span>Explore Consulting Practices</span>
-                  <span class="btn-arrow" aria-hidden="true">&darr;</span>
-                </a>
-              </div>
-
-              <!-- Trust Microcopy Highlights -->
-              <div class="hero-trust-row">
-                <div class="trust-item">
-                  <span class="trust-check">&#10003;</span>
-                  <span><strong>Zero Junior Handoffs</strong></span>
-                </div>
-                <div class="trust-item">
-                  <span class="trust-check">&#10003;</span>
-                  <span><strong>14-Day Delivery Sprints</strong></span>
-                </div>
-                <div class="trust-item">
-                  <span class="trust-check">&#10003;</span>
-                  <span><strong>100% Principal Staffing</strong></span>
-                </div>
-              </div>
-
-              <!-- Enterprise Ecosystem / Tech Stack Chips -->
-              <div class="hero-stack-bar">
-                <span class="stack-label">Architected for:</span>
-                <div class="stack-chips">
-                  <span class="stack-chip"><span class="chip-dot"></span>Oracle Fusion &amp; EBS</span>
-                  <span class="stack-chip"><span class="chip-dot"></span>Snowflake</span>
-                  <span class="stack-chip"><span class="chip-dot"></span>Databricks</span>
-                  <span class="stack-chip"><span class="chip-dot"></span>AWS</span>
-                  <span class="stack-chip"><span class="chip-dot"></span>Azure</span>
-                  <span class="stack-chip"><span class="chip-dot"></span>dbt Labs</span>
-                </div>
-              </div>
-
-            </div><!-- /hero-main-group -->
-
-            <!-- Right Column: Interactive Architecture Bridge Card -->
-            <div class="hero-visual-card" aria-label="AARK Enterprise System Architecture Diagram">
-              <div class="arch-card-header">
-                <div class="arch-header-left">
-                  <span class="arch-live-indicator" aria-hidden="true"></span>
-                  <span class="arch-header-title">The Unified Enterprise Bridge</span>
-                </div>
-                <span class="arch-status-pill">Active Real-Time Flow</span>
-              </div>
-
-              <div class="arch-bridge-body">
-                <!-- Node 1: Oracle Core -->
-                <div class="arch-node arch-node-oracle">
-                  <div class="arch-node-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="2" y="3" width="20" height="14" rx="2"></rect>
-                      <line x1="8" y1="21" x2="16" y2="21"></line>
-                      <line x1="12" y1="17" x2="12" y2="21"></line>
-                    </svg>
-                  </div>
-                  <div class="arch-node-content">
-                    <div class="arch-node-tag">Pillar 01 &bull; Core Backbone</div>
-                    <div class="arch-node-title">Oracle ERP &amp; Fusion Cloud</div>
-                    <div class="arch-node-meta">Fusion Cloud &bull; EBS Migration &bull; OIC Sync</div>
-                  </div>
-                  <span class="arch-node-badge">Transactional Core</span>
-                </div>
-
-                <!-- Connector 1 -->
-                <div class="arch-connector" aria-hidden="true">
-                  <div class="connector-track">
-                    <div class="connector-beam"></div>
-                  </div>
-                  <div class="connector-tag">Automated Zero-Friction Ingestion &bull; Sub-second</div>
-                </div>
-
-                <!-- Node 2: Modern Lakehouse -->
-                <div class="arch-node arch-node-lakehouse">
-                  <div class="arch-node-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                      <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                    </svg>
-                  </div>
-                  <div class="arch-node-content">
-                    <div class="arch-node-tag">Pillar 02 &bull; Trusted Lakehouse</div>
-                    <div class="arch-node-title">Modern Cloud Data Platform</div>
-                    <div class="arch-node-meta">Databricks Lakehouse &bull; Snowflake &bull; dbt</div>
-                  </div>
-                  <span class="arch-node-badge">Single Source of Truth</span>
-                </div>
-
-                <!-- Connector 2 -->
-                <div class="arch-connector" aria-hidden="true">
-                  <div class="connector-track">
-                    <div class="connector-beam beam-alt"></div>
-                  </div>
-                  <div class="connector-tag">Governed Feature Feeds &bull; Decision Pipelines</div>
-                </div>
-
-                <!-- Node 3: Applied AI & Automations -->
-                <div class="arch-node arch-node-ai">
-                  <div class="arch-node-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="12" cy="12" r="3"></circle>
-                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-                    </svg>
-                  </div>
-                  <div class="arch-node-content">
-                    <div class="arch-node-tag">Pillar 03 &bull; Intelligent Action</div>
-                    <div class="arch-node-title">Applied AI &amp; Enterprise Automation</div>
-                    <div class="arch-node-meta">Autonomous Reconciliations &bull; Executive BI</div>
-                  </div>
-                  <span class="arch-node-badge">Measurable ROI</span>
-                </div>
-              </div><!-- /arch-bridge-body -->
-
-              <!-- Live Telemetry Footer Bar -->
-              <div class="arch-telemetry-row">
-                <div class="telemetry-stat">
-                  <span class="telemetry-val">14 Days</span>
-                  <span class="telemetry-lbl">Sprint to Live Release</span>
-                </div>
-                <div class="telemetry-div" aria-hidden="true"></div>
-                <div class="telemetry-stat">
-                  <span class="telemetry-val">40+ Hrs</span>
-                  <span class="telemetry-lbl">Reclaimed / Wk</span>
-                </div>
-                <div class="telemetry-div" aria-hidden="true"></div>
-                <div class="telemetry-stat">
-                  <span class="telemetry-val">100%</span>
-                  <span class="telemetry-lbl">Principal Staffing</span>
-                </div>
-              </div>
-
-            </div><!-- /hero-visual-card -->
-
-          </div><!-- /hero-split-grid -->
-
-
-          <!-- Four-Column High-Impact Proof & Metrics Grid -->
-          <div class="hero-metrics-grid">
-            
-            <div class="metric-card">
-              <div class="metric-num">40<span>+</span></div>
-              <div class="metric-title">Hours / Week Reclaimed</div>
-              <div class="metric-desc">
-                Returned to business teams per workflow by automating cross-system data re-entry, manual reporting, and reconciliations.
-              </div>
-            </div>
-
-            <div class="metric-card">
-              <div class="metric-num">14 <span>Days</span></div>
-              <div class="metric-title">To First Production Release</div>
-              <div class="metric-desc">
-                We deliver working, validated automations in rapid 2-week iterations rather than 9-month speculative slide decks.
-              </div>
-            </div>
-
-            <div class="metric-card">
-              <div class="metric-num">20<span>+</span> <span>Years</span></div>
-              <div class="metric-title">Combined Delivery Experience</div>
-              <div class="metric-desc">
-                Deep technical expertise across Oracle Fusion Cloud, legacy EBS, modern lakehouses, and mission-critical cloud infrastructure.
-              </div>
-            </div>
-
-            <div class="metric-card">
-              <div class="metric-num">100<span>%</span></div>
-              <div class="metric-title">Senior Accountability</div>
-              <div class="metric-desc">
-                Zero bait-and-switch. The senior architects who assess your systems are the exact engineers building and launching them.
-              </div>
-            </div>
-
-          </div><!-- /hero-metrics-grid -->
-
-        </div><!-- /hero-content -->
-
-      </div><!-- /hero-card -->
-    </div><!-- /hero-stage -->
-  </section><!-- /hero-hero -->
+  <!-- Floating Light & Dark Mode Toggle Button (Floats on the Right Side of the Page) -->
+  <aside class="floating-theme-container" aria-label="Theme Switcher">
+    <button id="theme-toggle" class="floating-theme-btn" aria-label="Toggle Light and Dark Theme" type="button">
+      <span id="theme-icon" class="floating-theme-icon" aria-hidden="true">☀️</span>
+      <span id="theme-text" class="floating-theme-text">Light Mode</span>
+    </button>
+  </aside>
 
   
 
@@ -380,7 +150,7 @@
       <!-- Section Header: Eyebrow | Title | Description -->
       <div class="re-section-head">
         <p class="eyebrow" id="section-eyebrow">Three Core Disciplines &bull; One Unified Team</p>
-        <h2 id="paths-title">The Foundation, The Data, and The Intelligence</h2>
+        <h2 id="paths-title">The Foundation, The Data, and <span class="heading-accent">The Intelligence</span></h2>
         <p id="section-desc">
           We don’t sell AI as a novelty. We fix your transactional core, consolidate your data into a single source of truth, and deploy intelligent automation where it produces measurable ROI.
         </p>
@@ -513,7 +283,7 @@
       <!-- 3-Column Section Header (Eyebrow | Massive Title | Intro Lead) -->
       <div class="re-section-head">
         <p class="eyebrow" id="section-eyebrow">Platform Mastery &bull; Not a Reseller Wall</p>
-        <h2 id="services-heading">Built on the Technologies Powering Today's Enterprise</h2>
+        <h2 id="services-heading">Built on the Technologies <span class="heading-accent">Powering Today's Enterprise</span></h2>
         <p id="section-lead">We don't take kickbacks to force specific vendors. We build on the industry-leading platforms already trusted by your infrastructure team.</p>
       </div>
 
@@ -760,7 +530,7 @@
           </svg>
           <span>THE BOTTLENECK</span>
         </div>
-        <h2 class="event-highlights__title" id="problem-heading">The busywork is the real bottleneck.</h2>
+        <h2 class="event-highlights__title" id="problem-heading">The busywork is <span class="heading-accent">the real bottleneck.</span></h2>
         <p class="event-highlights__subtitle">
           Your systems aren't broken. They're just trapped in silos &mdash; quietly costing you deals, delaying executive reporting, and slowing delivery every month.
         </p>
@@ -923,178 +693,7 @@
   </section><!-- /#problem .event-highlights -->
 
 
-  <!-- =========================================================================
-       SECTION 07: DEEP-DIVE SOLUTIONS: WHAT WE BUILD (FROM AARKINN 8)
-       Connected Architecture: 1 Central Hub + 4 Corner Solution Nodes with Dynamic Connectors
-       ========================================================================= -->
-  <section class="section-connected" id="solutions" aria-label="Deep-Dive Solutions and Connected System Architecture">
-    <div class="shell">
-      
-      <!-- --- TOP ROW: HEADLINE & OVERVIEW COPY --- -->
-      <div class="connected-hero-grid">
-        
-        <!-- Left Column: Display Typography -->
-        <div class="hero-left-col">
-          <h2 class="display-title">
-            <span class="display-line">WE BELIEVE IN</span>
-            <span class="display-line display-accent">CONNECTED</span>
-            <span class="display-line">SYSTEMS</span>
-          </h2>
-        </div>
-
-        <!-- Right Column: Lead Statement & CTA Button -->
-        <div class="hero-right-col">
-          <p class="hero-lead-text">
-            We eliminate operational friction by unifying your core Oracle ERP, modern data lakehouses, and applied AI workflows into one connected architecture. Explore the four foundational pillars we architect and deploy.
-          </p>
-          
-          <div class="hero-action-group">
-            <a href="#models" class="btn-schedule">
-              <span>EXPLORE DELIVERY JOURNEY</span>
-              <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </a>
-
-            <a href="#problem" class="hero-story-link">
-              <span>Review the bottleneck diagnostic</span>
-              <span class="story-link-line"></span>
-            </a>
-          </div>
-        </div>
-
-      </div><!-- /connected-hero-grid -->
-
-      <!-- --- SYSTEM ARCHITECTURE SECTION (CONTINUOUS NATURAL SCROLL) --- -->
-      <div class="system-architecture-section" id="system-architecture-section">
-        
-        <div class="system-diagram-container" id="system-diagram-container">
-          
-          <!-- Dynamic SVG Connectors Layer -->
-          <svg class="system-connectors-svg" id="system-connectors-svg" aria-hidden="true">
-            <line id="line-consulting" class="connector-line line-consulting" stroke-dasharray="4 4" />
-            <line id="line-strategy" class="connector-line line-strategy" stroke-dasharray="4 4" />
-            <line id="line-design" class="connector-line line-design" stroke-dasharray="4 4" />
-            <line id="line-delivery" class="connector-line line-delivery" stroke-dasharray="4 4" />
-          </svg>
-
-          <!-- Central Node: UNIFIED ENTERPRISE ARCHITECTURE (Royal Blue Hub) -->
-          <article class="system-card card-accent card-center" id="card-hub" data-card="hub">
-            <div class="card-inner">
-              <header class="card-header">
-                <h3 class="card-title hub-title">UNIFIED ARCHITECTURE</h3>
-                <p class="card-subtitle hub-subtitle">Everything works better when connected.</p>
-              </header>
-              <ul class="card-bullet-list hub-list">
-                <li>Strategy, ERP &amp; data pipeline alignment</li>
-                <li>Automated cross-system middleware bridges</li>
-                <li>Private, verified enterprise AI workflows</li>
-                <li>Long-term engineering independence</li>
-              </ul>
-              <div class="card-divider hub-divider"></div>
-              <footer class="card-footer">
-                <p class="card-quote hub-quote">&ldquo;Not isolated vendor tools, but one cohesive operational system.&rdquo;</p>
-              </footer>
-            </div>
-          </article>
-
-          <!-- Grid Layout of 4 Outer Discipline Nodes -->
-          <div class="system-grid" id="system-grid">
-
-            <!-- Node 1: ORACLE ERP MODERNIZATION (Top Left) -->
-            <article class="system-card card-dark card-consulting" id="card-consulting" data-card="consulting">
-              <div class="card-inner">
-                <header class="card-header">
-                  <h3 class="card-title">ORACLE ERP SERVICES</h3>
-                  <p class="card-subtitle">Fusion Cloud &amp; EBS performance optimization.</p>
-                </header>
-                <ul class="card-bullet-list">
-                  <li>Fusion Cloud &amp; EBS performance optimization</li>
-                  <li>Financial closing speed &amp; automated reconciliation</li>
-                  <li>Custom extension pruning &amp; clean-core migration</li>
-                  <li>Continuous patch testing &amp; release validation</li>
-                </ul>
-                <div class="card-divider"></div>
-                <footer class="card-footer">
-                  <p class="card-quote">&ldquo;Foundations first &mdash; clean transactional reality before automation.&rdquo;</p>
-                </footer>
-              </div>
-            </article>
-
-            <!-- Node 2: INTELLIGENT REVENUE & SALES OPS (Top Right) -->
-            <article class="system-card card-dark card-strategy" id="card-strategy" data-card="strategy">
-              <div class="card-inner">
-                <header class="card-header">
-                  <h3 class="card-title">REVENUE &amp; SALES OPS</h3>
-                  <p class="card-subtitle">Quote-to-cash velocity across CRM and ERP.</p>
-                </header>
-                <ul class="card-bullet-list">
-                  <li>Quote-to-Cash automation across CRM and ERP</li>
-                  <li>CPQ workflow streamlining &amp; approval gate automation</li>
-                  <li>Real-time pipeline-to-general-ledger reconciliation</li>
-                  <li>Automated billing &amp; contract milestone triggers</li>
-                </ul>
-                <div class="card-divider"></div>
-                <footer class="card-footer">
-                  <p class="card-quote">&ldquo;Automate the glue &mdash; eliminate cross-system data re-entry completely.&rdquo;</p>
-                </footer>
-              </div>
-            </article>
-
-            <!-- Node 3: ENTERPRISE APPLIED AI (Bottom Left) -->
-            <article class="system-card card-dark card-design" id="card-design" data-card="design">
-              <div class="card-inner">
-                <header class="card-header">
-                  <h3 class="card-title">APPLIED ENTERPRISE AI</h3>
-                  <p class="card-subtitle">Domain models with deterministic safeguards.</p>
-                </header>
-                <ul class="card-bullet-list">
-                  <li>Private AI models grounded in enterprise data</li>
-                  <li>Instant RFP responses with footnoted source citations</li>
-                  <li>Intelligent invoice intake &amp; 3-way matching</li>
-                  <li>Human-in-the-loop exception routing &amp; approval gates</li>
-                </ul>
-                <div class="card-divider"></div>
-                <footer class="card-footer">
-                  <p class="card-quote">&ldquo;AI grounded strictly in verified source data &mdash; zero speculative novelty.&rdquo;</p>
-                </footer>
-              </div>
-            </article>
-
-            <!-- Node 4: CLOUD LAKEHOUSE & FINOPS (Bottom Right) -->
-            <article class="system-card card-dark card-delivery" id="card-delivery" data-card="delivery">
-              <div class="card-inner">
-                <header class="card-header">
-                  <h3 class="card-title">LAKEHOUSE &amp; FINOPS</h3>
-                  <p class="card-subtitle">Resilient data pipelines &amp; compute optimization.</p>
-                </header>
-                <ul class="card-bullet-list">
-                  <li>Snowflake, Databricks, and OCI lakehouse architecture</li>
-                  <li>Real-time pipeline health &amp; automated drift alerts</li>
-                  <li>Cloud compute FinOps cost optimization &amp; tuning</li>
-                  <li>Automated compliance &amp; audit logging frameworks</li>
-                </ul>
-                <div class="card-divider"></div>
-                <footer class="card-footer">
-                  <p class="card-quote">&ldquo;Delivering resilient data infrastructure that scales without compute bloat.&rdquo;</p>
-                </footer>
-              </div>
-            </article>
-
-          </div><!-- /system-grid -->
-
-        </div><!-- /system-diagram-container -->
-
-        <!-- Tagline Beneath Architecture -->
-        <div class="system-tagline-wrap" id="system-tagline-wrap">
-          <p class="system-tagline">&ldquo;FOUR ENTERPRISE SOLUTIONS. ONE CONNECTED ARCHITECTURE.&rdquo;</p>
-        </div>
-
-      </div><!-- /system-architecture-section -->
-
-    </div><!-- /shell -->
-  </section><!-- /#solutions .section-connected -->
+  
 
 
   <!-- =========================================================================
@@ -1105,7 +704,7 @@
     <!-- Section Header -->
     <div class="journey-header">
       <span class="journey-eyebrow">Engagement Models &bull; Predictable Enterprise Delivery</span>
-      <h2 class="journey-title">From Operational Friction to Working Software</h2>
+      <h2 class="journey-title">From Operational Friction <span class="heading-accent">to Working Software</span></h2>
       <p class="journey-subtitle">
         No 80-page strategy decks that sit on a shelf. No junior handoffs or surprise billings. A disciplined, sequential journey from diagnostic blueprint to production cutover.
       </p>
@@ -1267,10 +866,398 @@
   </section>
 
 
-<!-- Anchor targets to prevent empty scrolling jumps -->
-  <div id="contact" style="visibility: hidden; position: relative; top: -80px;"></div>
-  <div id="practices" style="visibility: hidden; position: relative; top: -80px;"></div>
+  <!-- =========================================================================
+       08. CTA SECTION (MATCHING REFERENCE DESIGN)
+       Rounded banner card, ambient waves, two-tone typography & pill button
+       ========================================================================= -->
+  <section class="section-cta" id="cta">
+    <div class="cta-container">
+      <div class="cta-card">
+        <!-- Ambient Decorative Contour Lines SVG -->
+        <svg class="cta-contour-lines" viewBox="0 0 700 350" fill="none" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M 100 0 C 250 80, 450 60, 700 120" stroke="currentColor" stroke-width="1.4" stroke-opacity="0.22" />
+          <path d="M 180 0 C 320 110, 500 90, 700 180" stroke="currentColor" stroke-width="1.4" stroke-opacity="0.17" />
+          <path d="M 260 0 C 400 140, 560 120, 700 240" stroke="currentColor" stroke-width="1.4" stroke-opacity="0.13" />
+          <path d="M 340 0 C 470 170, 610 150, 700 290" stroke="currentColor" stroke-width="1.4" stroke-opacity="0.09" />
+          <path d="M 420 0 C 530 200, 660 180, 700 340" stroke="currentColor" stroke-width="1.4" stroke-opacity="0.06" />
+        </svg>
 
+        <div class="cta-content">
+          <h2 class="cta-title">
+            Let’s Build Technology That Moves Your Business <span class="heading-accent">Forward</span>
+          </h2>
+          <p class="cta-subtitle">
+            Build scalable software with experienced technology partners focused on your growth.
+          </p>
+          <div class="cta-actions">
+            <a href="#contact" class="btn-cta-pill">
+              <span class="btn-text">Start Your Project</span>
+              <span class="btn-icon-bubble" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+                  <path d="M3.33337 8H12.6667" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 3.33331L12.6667 7.99998L8 12.6666" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       09. FAQ SECTION (MATCHING REFERENCE DESIGN)
+       Sticky support sidebar card + 6-item interactive accordion
+       ========================================================================= -->
+  <section class="section-faq" id="faq">
+    <div class="faq-layout">
+      <!-- Left Panel: Full-height panel with wavy contour image top & support action bottom -->
+      <div class="faq-left-panel">
+        <div class="faq-wave-wrap">
+          <img src="assets/aark-faq-bg.svg" alt="" class="faq-wave-img" aria-hidden="true" />
+        </div>
+        <div class="faq-left-content">
+          <p class="faq-left-text">
+            Still have questions? Book a call with our friendly team to get all your questions and queries answered.
+          </p>
+          <a href="#contact" class="btn btn-faq-schedule">
+            <span class="btn-text">Schedule a call</span>
+            <span class="btn-icon-bubble" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M3.33337 8H12.6667" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 3.33331L12.6667 7.99998L8 12.6666" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Panel: FAQ Header (Label, H2, Subtitle) + Accordion List -->
+      <div class="faq-right-panel">
+        <div class="faq-header">
+          <span class="faq-label">FAQ</span>
+          <h2 class="faq-title">
+            Frequently Asked <span class="heading-accent">Questions</span>
+          </h2>
+          <p class="faq-subtitle">
+            Explore How We Turn Client Challenges into Triumphs Across Diverse Sectors with Cutting-Edge Technologies.
+          </p>
+        </div>
+
+        <!-- Accordion List -->
+        <div class="faq-accordion" role="region" aria-label="Frequently Asked Questions">
+          <!-- Item 1 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">What if we have an idea but not a complete product plan?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                That is completely normal and where we do our best work. We run structured technical and product discovery sessions to validate architecture, refine feature scopes, identify technical risks, and draft a phased roadmap before writing a single line of production code.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">How do you decide what technology or approach a project actually needs?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                We evaluate your existing infrastructure, enterprise constraints, scalability targets, and team capabilities. We recommend technologies based strictly on production reliability, total cost of ownership, and performance—never novelty or vendor hype.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">Can you work with software built by another development team?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Yes. A significant portion of our engagements involve taking over, modernizing, or augmenting existing enterprise applications. We conduct a thorough architectural and code quality audit, remediate technical debt, and establish automated CI/CD pipelines to ensure seamless continuity.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">What happens when the best technical solution does not fit the business?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Business reality always takes precedence over pure architectural elegance. When engineering perfection conflicts with timeline, budget, or operational constraints, we present pragmatic compromise models with transparent trade-offs so stakeholders can make informed decisions.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">How do you decide whether AI should be part of a product?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                We apply AI only where it delivers measurable enterprise ROI—such as reducing manual processing times, extracting structured insights from unstructured data, or augmenting cognitive workflows. If traditional deterministic rules or algorithmic pipelines solve the problem faster and more reliably, we recommend those instead.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-question-text">What happens after the first version goes into production?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                We ensure total knowledge transfer, comprehensive operational runbooks, and production stabilization support. Your internal engineering team retains full ownership of the codebase and infrastructure with zero vendor lock-in, with optional ongoing advisory support as your system scales.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       10. CONTACT US / DISCUSS WITH US SECTION (MATCHING VIDEO DESIGN)
+       Radial gradient background, client proof badges, quote, glassmorphism form
+       ========================================================================= -->
+    <!-- =========================================================================
+       10. CONTACT US / ARCHITECTURAL REVIEW SECTION (AARK BRAND THEME & CONTENT)
+       Senior delivery team evaluation, verified proof & interactive diagnostic intake
+       ========================================================================= -->
+  <section class="section-contact-us" id="contact">
+    <div class="contact-us-container">
+      <div class="contact-us-grid">
+        <!-- Left Column: Copy & Enterprise Value Proof -->
+        <div class="contact-us-info">
+          <div class="contact-us-header">
+            <span class="contact-us-label">DIAGNOSTIC SESSION &bull; ARCHITECTURAL REVIEW</span>
+            <h2 class="contact-us-title">
+              Let’s Eliminate Your<br>
+              <span class="heading-accent">Operational Bottlenecks.</span>
+            </h2>
+            <p class="contact-us-subtitle">
+              Book a 30-minute diagnostic session with a senior systems architect. No generic sales pitches&mdash;just an honest evaluation of your systems, data architecture, and clear recommendations.
+            </p>
+          </div>
+
+          <!-- AARK Enterprise Pillars & Proof Badges -->
+          <div class="contact-us-proof">
+            <div class="contact-value-badges">
+              <span class="contact-badge"><span class="badge-dot">✦</span> 100% Principal Architects &bull; Zero Junior Handoffs</span>
+              <span class="contact-badge"><span class="badge-dot">✦</span> 14-Day Production Iterations</span>
+              <span class="contact-badge"><span class="badge-dot">✦</span> Measurable ROI &amp; Friction Reduction</span>
+            </div>
+
+            <div class="contact-proof-card">
+              <p class="contact-proof-quote">
+                &ldquo;AARK eliminated 14 hours of weekly manual reconciliation across our Oracle ERP and Snowflake within our first sprint.&rdquo;
+              </p>
+              <span class="contact-proof-author">&mdash; VP of Technology &amp; Operations, Industrial Distribution</span>
+            </div>
+
+            <div class="contact-direct-strip">
+              <div class="direct-strip-item">
+                <span class="direct-label">Direct Inquiry:</span>
+                <a href="mailto:hello@aarkinn.com" class="direct-link">hello@aarkinn.com</a>
+              </div>
+              <div class="direct-strip-item">
+                <span class="direct-label">Headquarters:</span>
+                <span class="direct-val">Fort Mill, SC &bull; Charlotte Metro &amp; Nationwide</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Glassmorphic Interactive Contact Form -->
+        <div class="contact-form-card">
+          <form class="contact-form" id="project-contact-form" novalidate>
+            <div class="form-field-group">
+              <label for="contact-name" class="field-label">Full Name *</label>
+              <input type="text" id="contact-name" name="name" class="field-input" placeholder="e.g. Sarah Jenkins" required />
+            </div>
+
+            <div class="form-field-group">
+              <label for="contact-email" class="field-label">Work Email *</label>
+              <input type="email" id="contact-email" name="email" class="field-input" placeholder="e.g. sjenkins@company.com" required />
+            </div>
+
+            <div class="form-field-group">
+              <label for="contact-company" class="field-label">Company &amp; Core Systems</label>
+              <input type="text" id="contact-company" name="company" class="field-input" placeholder="e.g. Oracle ERP, Snowflake, Databricks, AI" />
+            </div>
+
+            <div class="form-field-group">
+              <label for="contact-message" class="field-label">Primary Bottleneck to Solve *</label>
+              <textarea id="contact-message" name="message" class="field-input field-textarea" rows="2" placeholder="Describe the operational friction, manual work, or system gap..." required></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-submit-wrap">
+              <button type="submit" class="btn-form-submit" id="contact-submit-btn">
+                <span class="btn-text">Request Architectural Review</span>
+                <span class="btn-submit-icon" aria-hidden="true">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <!-- Success / Feedback message -->
+            <div class="form-feedback-message" id="form-feedback-message" style="display: none;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. FOOTER SECTION (MATCHING REFERENCE DESIGN)
+       3-column layout, contact info with icons, social links, legal bar & giant watermark
+       ========================================================================= -->
+    <!-- =========================================================================
+       10. FOOTER SECTION (CORRECT AARK HEADQUARTERS & AVAILABLE SECTIONS)
+       ========================================================================= -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-container">
+      <!-- Main 3-Column Footer Grid -->
+      <div class="footer-grid">
+        <!-- Column 1: Correct Contact & Location Information -->
+        <div class="footer-col footer-col-contact">
+          <h4 class="footer-col-title">Contact Us</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item footer-address-item">
+              <svg class="footer-icon footer-pin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <div class="footer-contact-text footer-address-text">
+                <span class="footer-location-title">Location</span>
+                <span class="footer-location-line">Fort Mill, SC.</span>
+                <span class="footer-location-sub">Working across Charlotte and the Carolinas.</span>
+              </div>
+            </li>
+            <li class="footer-contact-item">
+              <svg class="footer-icon footer-mail-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <div class="footer-contact-text">
+                <a href="mailto:hello@aarkinn.com" class="footer-email-link">hello@aarkinn.com</a>
+              </div>
+            </li>
+          </ul>
+
+          <div class="footer-social-wrap">
+            <h5 class="footer-social-title">Follow Us On</h5>
+            <div class="footer-social-links">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="X (Twitter)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Facebook">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="YouTube">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Available Website Sections Only -->
+        <div class="footer-col footer-col-company">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="#practices">Practices</a></li>
+            <li><a href="#platforms">Platforms</a></li>
+            <li><a href="#problem">Why Us</a></li>
+            <li><a href="#models">Delivery Journey</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Practices & Disciplines -->
+        <div class="footer-col footer-col-services">
+          <h4 class="footer-col-title">Core Disciplines</h4>
+          <ul class="footer-links-list">
+            <li><a href="#practices">Oracle Fusion Cloud &amp; ERP</a></li>
+            <li><a href="#practices">Cloud &amp; Data Lakehouse</a></li>
+            <li><a href="#practices">Applied AI &amp; Automation</a></li>
+            <li><a href="#platforms">Snowflake &amp; Databricks</a></li>
+            <li><a href="#platforms">AWS &amp; Microsoft Azure</a></li>
+            <li><a href="#contact">Architectural Review</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Divider -->
+      <div class="footer-divider"></div>
+
+      <!-- Footer Bottom Row: Copyright + Legal Links -->
+      <div class="footer-bottom-row">
+        <p class="footer-copyright">
+          &copy; 2026 AARK Innovations Technologies. All rights reserved.
+        </p>
+        <div class="footer-legal-links">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Use</a>
+        </div>
+      </div>
+
+      <!-- Giant Architectural Watermark at Bottom (Matching Reference) -->
+      <div class="footer-watermark" aria-hidden="true">
+        <span class="watermark-brand">AARK</span> <span class="watermark-accent">Innovations</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Pre-baked Offline Aarkin Logo Vector Coordinates -->
+  <script src="assets/aarkin_points.js"></script>
+  <!-- Hero Streamline & Tech Pipeline Engine -->
+  <script src="main.js"></script>
+  <!-- Master Application Script -->
   <script src="app.js"></script>
 </body>
 </html>

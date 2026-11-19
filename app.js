@@ -9,6 +9,27 @@
 (() => {
   'use strict';
 
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  // Clean initial load handling: scroll to top on refresh unless valid section hash
+  function handleInitialHash() {
+    if (window.location.hash && window.location.hash !== '#top' && window.location.hash !== '#') {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          const navOffset = 76;
+          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navOffset;
+          window.scrollTo({ top: targetPosition, behavior: 'auto' });
+        }, 100);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }
+  window.addEventListener('load', handleInitialHash);
+
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.is-drawable').forEach(el => el.classList.add('is-in'));
     initNavigation();
@@ -19,50 +40,33 @@
     initConnectedArchitecture();
     initCardHoverFocus();
     initJourney();
+    initFaqAccordion();
+    initSmoothScroll();
+    initContactForm();
+    initRoiCalculator();
   });
 
   /* =========================================================================
-     1. TWO-STEP NOTCH NAVIGATION CONTROLLER (FROM 3.1)
+     1. FLOATING NAVBAR & MOBILE CONTROLLER (DAPPER REFERENCE)
      ========================================================================= */
   function initNavigation() {
-    const nav = document.getElementById('twostep-nav');
-    const toggleBtn = document.getElementById('nav-toggle-btn');
-    const backdrop = document.getElementById('nav-backdrop');
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navMenu = document.getElementById('nav-menu');
 
-    if (!nav || !toggleBtn) return;
+    if (mobileToggle && navMenu) {
+      mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('is-open');
+        const isOpen = navMenu.classList.contains('is-open');
+        mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
 
-    let isNavOpen = false;
-
-    function toggleNav(forceState) {
-      isNavOpen = typeof forceState === 'boolean' ? forceState : !isNavOpen;
-      nav.setAttribute('data-nav-status', isNavOpen ? 'active' : 'closed');
-      toggleBtn.setAttribute('aria-expanded', isNavOpen ? 'true' : 'false');
-      document.body.style.overflow = isNavOpen ? 'hidden' : '';
-    }
-
-    toggleBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleNav();
-    });
-
-    if (backdrop) {
-      backdrop.addEventListener('click', () => {
-        if (isNavOpen) toggleNav(false);
+      document.querySelectorAll('#nav-menu .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('is-open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+        });
       });
     }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && isNavOpen) {
-        toggleNav(false);
-      }
-    });
-
-    const navLinks = document.querySelectorAll('.twostep-link, .twostep-barCta, .product-learn-btn');
-    navLinks.forEach((link) => {
-      link.addEventListener('click', () => {
-        if (isNavOpen) toggleNav(false);
-      });
-    });
   }
 
   /* =========================================================================
@@ -610,4 +614,170 @@
     });
   }
 
+  /* =========================================================================
+     8. FAQ ACCORDION CONTROLLER
+     ========================================================================= */
+  function initFaqAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (!faqItems || faqItems.length === 0) return;
+
+    faqItems.forEach((item) => {
+      const questionBtn = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      if (!questionBtn || !answer) return;
+
+      questionBtn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('is-open');
+
+        // Close other items
+        faqItems.forEach((otherItem) => {
+          if (otherItem !== item && otherItem.classList.contains('is-open')) {
+            otherItem.classList.remove('is-open');
+            const otherBtn = otherItem.querySelector('.faq-question');
+            const otherAnswer = otherItem.querySelector('.faq-answer');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+            if (otherAnswer) otherAnswer.style.maxHeight = null;
+          }
+        });
+
+        // Toggle current
+        if (isOpen) {
+          item.classList.remove('is-open');
+          questionBtn.setAttribute('aria-expanded', 'false');
+          answer.style.maxHeight = null;
+        } else {
+          item.classList.add('is-open');
+          questionBtn.setAttribute('aria-expanded', 'true');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+  }
+
+  /* =========================================================================
+     9. INTERNAL SMOOTH SCROLLING (OFFSET NAVBAR)
+     ========================================================================= */
+  function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const navOffset = 76;
+          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navOffset;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+
+          if (history.pushState) {
+            history.replaceState(null, null, href);
+          }
+        }
+      });
+    });
+  }
+
+
+  /* =========================================================================
+     10. CONTACT FORM CONTROLLER (SUBMISSION & VALIDATION)
+     ========================================================================= */
+  function initContactForm() {
+    const form = document.getElementById('project-contact-form');
+    if (!form) return;
+
+    const feedbackMsg = document.getElementById('form-feedback-message');
+    const submitBtn = document.getElementById('contact-submit-btn');
+
+    // Handle Form Submission
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('contact-name').value.trim();
+      const email = document.getElementById('contact-email').value.trim();
+      const message = document.getElementById('contact-message').value.trim();
+
+      if (!name || !email || !message) {
+        if (feedbackMsg) {
+          feedbackMsg.style.display = 'block';
+          feedbackMsg.style.background = 'rgba(239, 68, 68, 0.2)';
+          feedbackMsg.style.borderColor = 'rgba(239, 68, 68, 0.5)';
+          feedbackMsg.textContent = 'Please fill out all required fields marked with *.';
+        }
+        return;
+      }
+
+      // Success Feedback
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Sending...</span>';
+      }
+
+      setTimeout(() => {
+        form.reset();
+        if (fileNamePreview) fileNamePreview.textContent = '';
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>Submit</span>';
+        }
+        if (feedbackMsg) {
+          feedbackMsg.style.display = 'block';
+          feedbackMsg.style.background = 'rgba(34, 197, 94, 0.2)';
+          feedbackMsg.style.borderColor = 'rgba(34, 197, 94, 0.5)';
+          feedbackMsg.innerHTML = '✓ Thank you! Your project details have been received. An AARK technical director will be in touch within 24 hours.';
+        }
+      }, 700);
+    });
+  }
+
+
+  /* =========================================================================
+     10. INTERACTIVE ROI & WASTE CALCULATOR CONTROLLER
+     ========================================================================= */
+  function initRoiCalculator() {
+    const workersInput = document.getElementById('calc-workers');
+    const hoursInput = document.getElementById('calc-hours');
+    const rateInput = document.getElementById('calc-rate');
+
+    if (!workersInput || !hoursInput || !rateInput) return;
+
+    const workersVal = document.getElementById('calc-workers-val');
+    const hoursVal = document.getElementById('calc-hours-val');
+    const rateVal = document.getElementById('calc-rate-val');
+
+    const totalCostOut = document.getElementById('calc-total-cost');
+    const recoverableOut = document.getElementById('calc-recoverable');
+    const hoursRestoredOut = document.getElementById('calc-hours-restored');
+
+    function updateCalc() {
+      const workers = parseInt(workersInput.value, 10) || 25;
+      const hours = parseInt(hoursInput.value, 10) || 8;
+      const rate = parseInt(rateInput.value, 10) || 65;
+
+      if (workersVal) workersVal.textContent = workers + ' employees';
+      if (hoursVal) hoursVal.textContent = hours + ' hrs / wk';
+      if (rateVal) rateVal.textContent = '$' + rate + ' / hr';
+
+      // 52 weeks per year
+      const totalCost = workers * hours * rate * 52;
+      const recoverable = Math.round(totalCost * 0.60);
+      const hoursRestored = Math.round(workers * hours * 52 * 0.60);
+
+      const fmt = (num) => '$' + num.toLocaleString('en-US');
+      const fmtHrs = (num) => num.toLocaleString('en-US') + ' hrs / yr';
+
+      if (totalCostOut) totalCostOut.textContent = fmt(totalCost) + ' / yr';
+      if (recoverableOut) recoverableOut.textContent = fmt(recoverable) + ' / yr';
+      if (hoursRestoredOut) hoursRestoredOut.textContent = fmtHrs(hoursRestored);
+    }
+
+    [workersInput, hoursInput, rateInput].forEach(inp => {
+      inp.addEventListener('input', updateCalc);
+    });
+
+    updateCalc();
+  }
 })();
