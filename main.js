@@ -66,6 +66,7 @@
 
   function updateThemeUI() {
     const isDark = isDarkTheme();
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
     if (themeIcon) themeIcon.textContent = isDark ? '🌙' : '☀️';
     if (themeText) themeText.textContent = isDark ? 'Dark Mode' : 'Light Mode';
     if (themeToggleBtn) {
