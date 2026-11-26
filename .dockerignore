@@ -1,0 +1,9 @@
+.git
+.gitignore
+.kiro
+.agents
+node_modules
+*.md
+Dockerfile
+docker-compose.yml
+.dockerignore

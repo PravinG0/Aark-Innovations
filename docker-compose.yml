@@ -1,0 +1,8 @@
+services:
+  aark-innovations:
+    build: .
+    image: aark-innovations:latest
+    container_name: aark-innovations
+    restart: unless-stopped
+    ports:
+      - "8087:80"
