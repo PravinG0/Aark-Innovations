@@ -1,305 +1,229 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>AARK Innovations &mdash; Enterprise Systems That Run Your Business</title>
-  <!-- Google Fonts: Hanken Grotesk -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>AARK Innovations — Enterprise Systems That Run Your Business</title>
+<!-- Google Fonts: Hanken Grotesk -->
+
+
+
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body class="light-theme">
-
-  <!-- =========================================================================
+<!-- =========================================================================
        HEADER / NAVIGATION BAR (FROM AARKINN 9 HERO)
        ========================================================================= -->
-    <!-- =========================================================================
+<!-- =========================================================================
        HEADER / NAVIGATION BAR (DAPPER REFERENCE: FLOATING PILL NAVBAR)
        Logo | Available Sections Only | "Talk to us [↗]" CTA Group
        ========================================================================= -->
-  <header class="navbar" id="top-navbar">
-    <div class="nav-container">
-      <!-- Brand Logo -->
-      <a href="#top" class="brand-logo" aria-label="AARK Innovations Home">
-        <div class="logo-mark">
-          <img src="assets/aarkin-logo.png" alt="AARK Innovations Logo" class="brand-logo-img">
-        </div>
-        <div class="brand-text-group">
-          <span class="logo-text">AARK</span>
-          <span class="logo-subtext">Innovations</span>
-        </div>
-      </a>
-
-      <!-- Center Navigation Links (Strictly Available Sections Only) -->
-      <nav class="nav-menu" id="nav-menu" aria-label="Primary Navigation">
-        <a href="#practices" class="nav-link">Practices</a>
-        <a href="#platforms" class="nav-link">Platforms</a>
-        <a href="#problem" class="nav-link">Why Us</a>
-        <a href="#models" class="nav-link">Delivery Journey</a>
-        <a href="#faq" class="nav-link">FAQ</a>
-      </nav>
-
-      <!-- Right Action CTA Group: "Talk to us" + Theme Blue Square Arrow Box -->
-      <div class="nav-actions">
-        <a href="#contact" class="nav-cta-group" aria-label="Talk to us">
-          <span class="nav-cta-text">Talk to us</span>
-          <span class="nav-cta-icon" aria-hidden="true">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<header class="navbar" id="top-navbar">
+<div class="nav-container">
+<!-- Brand Logo -->
+<a aria-label="AARK Innovations Home" class="brand-logo" href="#top">
+<div class="logo-mark">
+<img alt="AARK Innovations Logo" class="brand-logo-img" src="assets/aarkin-logo.webp"/>
+</div>
+<div class="brand-text-group">
+<span class="logo-text">AARK</span>
+<span class="logo-subtext">Innovations</span>
+</div>
+</a>
+<!-- Center Navigation Links (Strictly Available Sections Only) -->
+<nav aria-label="Primary Navigation" class="nav-menu" id="nav-menu">
+<a class="nav-link" href="#practices">Practices</a>
+<a class="nav-link" href="#platforms">Platforms</a>
+<a class="nav-link" href="#problem">Why Us</a>
+<a class="nav-link" href="#models">Delivery Journey</a>
+<a class="nav-link" href="#faq">FAQ</a>
+</nav>
+<!-- Right Action CTA Group: "Talk to us" + Theme Blue Square Arrow Box -->
+<div class="nav-actions">
+<a aria-label="Talk to us" class="nav-cta-group" href="#contact">
+<span class="nav-cta-text">Talk to us</span>
+<span aria-hidden="true" class="nav-cta-icon">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M7 17L17 7M17 7H7M17 7V17"/>
             </svg>
-          </span>
-        </a>
-      </div>
-
-      <!-- Mobile Menu Toggle -->
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-
-
-  <!-- =========================================================================
+</span>
+</a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation" class="mobile-toggle" id="mobile-toggle">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</header>
+<!-- =========================================================================
        HERO SECTION (FROM AARKINN 9 HERO)
        Streamline Engine, Vector Canvas & 3D Interactive Tech Pipeline
        ========================================================================= -->
-  <main class="hero-wrapper" id="top">
-    <!-- Streamline Canvas for Aarkin "A" Logo and Flowing Tech Stream -->
-    <canvas id="webgl-canvas"></canvas>
-
-    <!-- Global Full-Width Stream Track (Allows 3D Tech Badges to Travel Across to the VERY END of the line) -->
-    <div class="global-stream-track" id="ticker-track"></div>
-
-    <!-- Hero Content Overlay -->
-    <div class="hero-container">
-      <!-- Left Visual Spacer (aligns with Aarkin Logo) -->
-      <div class="hero-visual-slot"></div>
-
-      <!-- Right Content Column -->
-      <div class="hero-content">
-        <!-- Eyebrow Pill -->
-        <div class="hero-eyebrow" role="note" aria-label="Senior Delivery Team — Mid-Market &amp; Enterprise Architecture">
-          <span class="eyebrow-beacon">
-            <span class="eyebrow-beacon-ping"></span>
-            <span class="eyebrow-beacon-core"></span>
-          </span>
-          <span class="eyebrow-tag">Senior Delivery Team</span>
-          <span class="eyebrow-sep" aria-hidden="true">&bull;</span>
-          <span class="eyebrow-label">Mid-Market &amp; Enterprise Architecture</span>
-          <span class="eyebrow-arrow" aria-hidden="true">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+<main class="hero-wrapper" id="top">
+<!-- Streamline Canvas for Aarkin "A" Logo and Flowing Tech Stream -->
+<canvas id="webgl-canvas"></canvas>
+<!-- Global Full-Width Stream Track (Allows 3D Tech Badges to Travel Across to the VERY END of the line) -->
+<div class="global-stream-track" id="ticker-track"></div>
+<!-- Hero Content Overlay -->
+<div class="hero-container">
+<!-- Left Visual Spacer (aligns with Aarkin Logo) -->
+<div class="hero-visual-slot"></div>
+<!-- Right Content Column -->
+<div class="hero-content">
+<!-- Eyebrow Pill -->
+<div aria-label="Senior Delivery Team — Mid-Market &amp; Enterprise Architecture" class="hero-eyebrow" role="note">
+<span class="eyebrow-beacon">
+<span class="eyebrow-beacon-ping"></span>
+<span class="eyebrow-beacon-core"></span>
+</span>
+<span class="eyebrow-tag">Senior Delivery Team</span>
+<span aria-hidden="true" class="eyebrow-sep">•</span>
+<span class="eyebrow-label">Mid-Market &amp; Enterprise Architecture</span>
+<span aria-hidden="true" class="eyebrow-arrow">
+<svg width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-          </span>
-        </div>
-
-        <h1 class="hero-title">
-          Enterprise Systems That Run Your Business,<br>
-          <span class="title-sub heading-accent">Not the Other Way Around.</span>
-        </h1>
-
-        <!-- Alignment anchor for the horizontal beam -->
-        <div class="stream-line-container" id="stream-container"></div>
-
-        <!-- Description Paragraph -->
-        <p class="hero-description">
+</span>
+</div>
+<h1 class="hero-title">
+          Enterprise Systems That Run Your Business,<br/>
+<span class="title-sub heading-accent">Not the Other Way Around.</span>
+</h1>
+<!-- Alignment anchor for the horizontal beam -->
+<div class="stream-line-container" id="stream-container"></div>
+<!-- Description Paragraph -->
+<p class="hero-description">
           AARK Innovations is the premier technical consulting partner for mid-market and enterprise organizations. We eliminate the costly operational friction between your core <strong>Oracle ERP systems</strong>, <strong>modern cloud data platforms</strong> (Snowflake, Databricks, AWS, Azure), and <strong>applied AI workflows</strong>.
         </p>
-
-        <!-- CTA Action Buttons -->
-        <div class="hero-ctas">
-          <a href="#contact" class="btn btn-hero-primary">
-            <span class="btn-text">Schedule a Working Session</span>
-            <span class="btn-arrow-bubble" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+<!-- CTA Action Buttons -->
+<div class="hero-ctas">
+<a class="btn btn-hero-primary" href="#contact">
+<span class="btn-text">Schedule a Working Session</span>
+<span aria-hidden="true" class="btn-arrow-bubble">
+<svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                 <path d="M3.33337 8H12.6667" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M8 3.33331L12.6667 7.99998L8 12.6666" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </span>
-          </a>
-          <a href="#practices" class="btn btn-hero-secondary">
-            <span class="btn-text">Explore Practices (Deep-Dive)</span>
-            <span class="btn-arrow-bubble" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+</span>
+</a>
+<a class="btn btn-hero-secondary" href="#practices">
+<span class="btn-text">Explore Practices (Deep-Dive)</span>
+<span aria-hidden="true" class="btn-arrow-bubble">
+<svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                 <path d="M8 3.33331V12.6666" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M12.6667 8L8 12.6666L3.33337 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <!-- Floating Light & Dark Mode Toggle Button (Floats on the Right Side of the Page) -->
-  <aside class="floating-theme-container" aria-label="Theme Switcher">
-    <button id="theme-toggle" class="floating-theme-btn" aria-label="Toggle Light and Dark Theme" type="button">
-      <span id="theme-icon" class="floating-theme-icon" aria-hidden="true">☀️</span>
-      <span id="theme-text" class="floating-theme-text">Light Mode</span>
-    </button>
-  </aside>
-
-  
-
-<section class="shell hx-paths is-drawable" id="practices" aria-labelledby="paths-title">
-      
-      <!-- Section Header: Eyebrow | Title | Description -->
-      <div class="re-section-head">
-        <p class="eyebrow" id="section-eyebrow">Three Core Disciplines &bull; One Unified Team</p>
-        <h2 id="paths-title">The Foundation, The Data, and <span class="heading-accent">The Intelligence</span></h2>
-        <p id="section-desc">
+</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Light & Dark Mode Toggle Button (Floats on the Right Side of the Page) -->
+<aside aria-label="Theme Switcher" class="floating-theme-container">
+<button aria-label="Toggle Light and Dark Theme" class="floating-theme-btn" id="theme-toggle" type="button">
+<span aria-hidden="true" class="floating-theme-icon" id="theme-icon">☀️</span>
+<span class="floating-theme-text" id="theme-text">Light Mode</span>
+</button>
+</aside>
+<section aria-labelledby="paths-title" class="shell hx-paths is-drawable" id="practices">
+<!-- Section Header: Eyebrow | Title | Description -->
+<div class="re-section-head">
+<p class="eyebrow" id="section-eyebrow">Three Core Disciplines • One Unified Team</p>
+<h2 id="paths-title">The Foundation, The Data, and <span class="heading-accent">The Intelligence</span></h2>
+<p id="section-desc">
           We don’t sell AI as a novelty. We fix your transactional core, consolidate your data into a single source of truth, and deploy intelligent automation where it produces measurable ROI.
         </p>
-      </div>
-
-      <!-- 3x2 Interactive Card Grid -->
-      <div class="hx-path-grid" id="path-grid" role="list">
-        
-        <!-- CARD 01: Local Businesses -->
-        <a class="hx-path" href="#local-businesses" role="listitem" id="card-1">
-          <div class="hx-path-img-wrap">
-            <img class="hx-path-img" src="assets/services/service-1.jpg" alt="Oracle ERP Services" loading="lazy" width="600" height="375">
-          </div>
-          <span class="hx-path-n" data-field="num">01</span>
-          <h3 data-field="title">Oracle ERP Services</h3>
-          <p data-field="desc">Fusion Cloud ERP implementations and rollouts, EBS migrations, and OIC integration architecture.</p>
-          <span class="hx-path-go" aria-hidden="true">
-            <svg class="ui-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M6 18 18 6M6 6h12v12"/>
-            </svg>
-          </span>
-        </a>
-
-        <!-- CARD 02: Restaurants and Retail -->
-        <a class="hx-path" href="#restaurants-retail" role="listitem" id="card-2">
-          <div class="hx-path-img-wrap">
-            <img class="hx-path-img" src="assets/services/service-2.jpg" alt="Cloud & Data Platforms" loading="lazy" width="600" height="375">
-          </div>
-          <span class="hx-path-n" data-field="num">02</span>
-          <h3 data-field="title">Cloud & Data Platforms</h3>
-          <p data-field="desc">Modern Lakehouse builds on Databricks and Snowflake with resilient pipelines and landing zone architecture.</p>
-          <span class="hx-path-go" aria-hidden="true">
-            <svg class="ui-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M6 18 18 6M6 6h12v12"/>
-            </svg>
-          </span>
-        </a>
-
-        <!-- CARD 03: Professional Firms -->
-        <a class="hx-path" href="#professional-firms" role="listitem" id="card-3">
-          <div class="hx-path-img-wrap">
-            <img class="hx-path-img" src="assets/services/service-3.jpg" alt="Applied AI & Automation" loading="lazy" width="600" height="375">
-          </div>
-          <span class="hx-path-n" data-field="num">03</span>
-          <h3 data-field="title">Applied AI & Automation</h3>
-          <p data-field="desc">Targeted AI agents and process automation layered on verified ERP and data foundations.</p>
-          <span class="hx-path-go" aria-hidden="true">
-            <svg class="ui-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M6 18 18 6M6 6h12v12"/>
-            </svg>
-          </span>
-        </a>
-
-        <!-- CARD 04: Contractors and Builders -->
-        <a class="hx-path" href="#contractors-builders" role="listitem" id="card-4">
-          <div class="hx-path-img-wrap">
-            <img class="hx-path-img" src="assets/services/service-4.jpg" alt="System Integration" loading="lazy" width="600" height="375">
-          </div>
-          <span class="hx-path-n" data-field="num">04</span>
-          <h3 data-field="title">System Integration</h3>
-          <p data-field="desc">Enterprise connectors across Oracle Integration Cloud, REST APIs, FBDI, and hybrid cloud ecosystems.</p>
-          <span class="hx-path-go" aria-hidden="true">
-            <svg class="ui-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M6 18 18 6M6 6h12v12"/>
-            </svg>
-          </span>
-        </a>
-
-        <!-- CARD 05: Real Estate -->
-        <a class="hx-path" href="#real-estate" role="listitem" id="card-5">
-          <div class="hx-path-img-wrap">
-            <img class="hx-path-img" src="assets/services/service-5.jpg" alt="Mid-Market Modernization" loading="lazy" width="600" height="375">
-          </div>
-          <span class="hx-path-n" data-field="num">05</span>
-          <h3 data-field="title">Mid-Market Modernization</h3>
-          <p data-field="desc">Modernizing operational workflows without the risk, delays, or multi-year bloat of traditional consultancies.</p>
-          <span class="hx-path-go" aria-hidden="true">
-            <svg class="ui-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M6 18 18 6M6 6h12v12"/>
-            </svg>
-          </span>
-        </a>
-
-        <!-- CARD 06: New Locations -->
-        <a class="hx-path" href="#new-locations" role="listitem" id="card-6">
-          <div class="hx-path-img-wrap">
-            <img class="hx-path-img" src="assets/services/service-6.jpg" alt="Architecture Advisory" loading="lazy" width="600" height="375">
-          </div>
-          <span class="hx-path-n" data-field="num">06</span>
-          <h3 data-field="title">Architecture Advisory</h3>
-          <p data-field="desc">Hands-on principal consultants from initial blueprint and scoping through go-live and ongoing hypercare.</p>
-          <span class="hx-path-go" aria-hidden="true">
-            <svg class="ui-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M6 18 18 6M6 6h12v12"/>
-            </svg>
-          </span>
-        </a>
-
-      </div><!-- /.hx-path-grid -->
-
-      <!-- Bottom Links Row (with Animated Arrow Translation) -->
-      <div class="hx-paths-more" role="navigation" aria-label="Related links">
-        <a class="text-link" href="#everyone">
-          <span>Enterprise Architecture Blueprint</span>
-          <svg class="ui-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+</div>
+<!-- 3x2 Interactive Card Grid -->
+<div class="hx-path-grid" id="path-grid" role="list">
+<!-- CARD 01: Local Businesses -->
+<article class="hx-path" id="card-1" role="listitem">
+<div class="hx-path-img-wrap">
+<img alt="Oracle ERP Services" class="hx-path-img" height="375" loading="lazy" src="assets/services/service-1.webp" width="600"/>
+</div>
+<span class="hx-path-n" data-field="num">01</span>
+<h3 data-field="title">Oracle ERP Services</h3>
+<p data-field="desc">Fusion Cloud ERP implementations and rollouts, EBS migrations, and OIC integration architecture.</p>
+</article>
+<!-- CARD 02: Restaurants and Retail -->
+<article class="hx-path" id="card-2" role="listitem">
+<div class="hx-path-img-wrap">
+<img alt="Cloud &amp; Data Platforms" class="hx-path-img" height="375" loading="lazy" src="assets/services/service-2.webp" width="600"/>
+</div>
+<span class="hx-path-n" data-field="num">02</span>
+<h3 data-field="title">Cloud &amp; Data Platforms</h3>
+<p data-field="desc">Modern Lakehouse builds on Databricks and Snowflake with resilient pipelines and landing zone architecture.</p>
+</article>
+<!-- CARD 03: Professional Firms -->
+<article class="hx-path" id="card-3" role="listitem">
+<div class="hx-path-img-wrap">
+<img alt="Applied AI &amp; Automation" class="hx-path-img" height="375" loading="lazy" src="assets/services/service-3.webp" width="600"/>
+</div>
+<span class="hx-path-n" data-field="num">03</span>
+<h3 data-field="title">Applied AI &amp; Automation</h3>
+<p data-field="desc">Targeted AI agents and process automation layered on verified ERP and data foundations.</p>
+</article>
+<!-- CARD 04: Contractors and Builders -->
+<article class="hx-path" id="card-4" role="listitem">
+<div class="hx-path-img-wrap">
+<img alt="System Integration" class="hx-path-img" height="375" loading="lazy" src="assets/services/service-4.webp" width="600"/>
+</div>
+<span class="hx-path-n" data-field="num">04</span>
+<h3 data-field="title">System Integration</h3>
+<p data-field="desc">Enterprise connectors across Oracle Integration Cloud, REST APIs, FBDI, and hybrid cloud ecosystems.</p>
+</article>
+<!-- CARD 05: Real Estate -->
+<article class="hx-path" id="card-5" role="listitem">
+<div class="hx-path-img-wrap">
+<img alt="Mid-Market Modernization" class="hx-path-img" height="375" loading="lazy" src="assets/services/service-5.webp" width="600"/>
+</div>
+<span class="hx-path-n" data-field="num">05</span>
+<h3 data-field="title">Mid-Market Modernization</h3>
+<p data-field="desc">Modernizing operational workflows without the risk, delays, or multi-year bloat of traditional consultancies.</p>
+</article>
+<!-- CARD 06: New Locations -->
+<article class="hx-path" id="card-6" role="listitem">
+<div class="hx-path-img-wrap">
+<img alt="Architecture Advisory" class="hx-path-img" height="375" loading="lazy" src="assets/services/service-6.webp" width="600"/>
+</div>
+<span class="hx-path-n" data-field="num">06</span>
+<h3 data-field="title">Architecture Advisory</h3>
+<p data-field="desc">Hands-on principal consultants from initial blueprint and scoping through go-live and ongoing hypercare.</p>
+</article>
+</div><!-- /.hx-path-grid -->
+<!-- Bottom Links Row (with Animated Arrow Translation) -->
+<div aria-label="Related links" class="hx-paths-more" role="navigation">
+<a class="text-link" href="#contact">
+<span>Schedule Working Session</span>
+<svg class="ui-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M6 18 18 6M6 6h12v12"/>
           </svg>
-        </a>
-        <a class="text-link" href="#city-guides">
-          <span>ERP Migration Playbook</span>
-          <svg class="ui-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 18 18 6M6 6h12v12"/>
-          </svg>
-        </a>
-        <a class="text-link" href="#website-check">
-          <span>Schedule Working Session</span>
-          <svg class="ui-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 18 18 6M6 6h12v12"/>
-          </svg>
-        </a>
-      </div>
-
-    </section>
-
-<section class="shell re-services" id="platforms" aria-labelledby="services-heading">
-
-      <!-- Interactive Switcher Toolbar -->
-      
-
-      <!-- 3-Column Section Header (Eyebrow | Massive Title | Intro Lead) -->
-      <div class="re-section-head">
-        <p class="eyebrow" id="section-eyebrow">Platform Mastery &bull; Not a Reseller Wall</p>
-        <h2 id="services-heading">Built on the Technologies <span class="heading-accent">Powering Today's Enterprise</span></h2>
-        <p id="section-lead">We don't take kickbacks to force specific vendors. We build on the industry-leading platforms already trusted by your infrastructure team.</p>
-      </div>
-
-      <!-- List of Service Items with Micro-Animations & Yellow Highlight Hover -->
-      <div class="re-service-list" id="services-list" role="list">
-
-        <!-- ===================================================================
+</a>
+</div>
+</section>
+<section aria-labelledby="services-heading" class="shell re-services" id="platforms">
+<!-- Interactive Switcher Toolbar -->
+<!-- 3-Column Section Header (Eyebrow | Massive Title | Intro Lead) -->
+<div class="re-section-head">
+<p class="eyebrow" id="section-eyebrow">Platform Mastery • Not a Reseller Wall</p>
+<h2 id="services-heading">Built on the Technologies <span class="heading-accent">Powering Today's Enterprise</span></h2>
+<p id="section-lead">We don't take kickbacks to force specific vendors. We build on the industry-leading platforms already trusted by your infrastructure team.</p>
+</div>
+<!-- List of Service Items with Micro-Animations & Yellow Highlight Hover -->
+<div class="re-service-list" id="services-list" role="list">
+<!-- ===================================================================
              SERVICE 01: WEBSITES
              =================================================================== -->
-        <a class="re-service" href="#website-design" role="listitem" data-index="01" aria-label="Websites service details">
-          <span class="re-index">01</span>
-          <h3>Oracle ERP Cloud</h3>
-
-          <!-- Animated Browser SVG with scrolling feed & moving cursor -->
-          <span class="mo-icon mo-icon-1" aria-hidden="true">
-            <svg viewBox="0 0 160 110" focusable="false" aria-hidden="true">
+<div class="re-service re-service-static" data-index="01">
+<span class="re-index">01</span>
+<h3>Oracle ERP Cloud</h3>
+<!-- Animated Browser SVG with scrolling feed & moving cursor -->
+<span aria-hidden="true" class="mo-icon mo-icon-1">
+<svg viewBox="0 0 160 110" focusable="false" aria-hidden="true">
               <rect x="6" y="6" width="148" height="98" rx="8" class="mo-i-frame"/>
               <path d="M6 26 H154" class="mo-i-line"/>
               <circle cx="18" cy="16" r="3" class="mo-i-dot"/>
@@ -332,27 +256,18 @@
               </g>
               <path d="M0 0 L12 8 L8 12 L16 18 L13 21 L5 15 L2 19 Z" class="mo-i-cursor"/>
             </svg>
-          </span>
-
-          <p>Senior-led implementations, EBS coexistence, financial consolidation, and risk-free cloud modernization.</p>
-
-          <span class="re-service-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 18 18 6M6 6h12v12"/>
-            </svg>
-          </span>
-        </a>
-
-        <!-- ===================================================================
+</span>
+<p>Deep expertise in Financials, SCM, Procurement, HCM, OIC, and Oracle Cloud Infrastructure.</p>
+</div>
+<!-- ===================================================================
              SERVICE 02: AI SETUP
              =================================================================== -->
-        <a class="re-service" href="#ai-setup" role="listitem" data-index="02" aria-label="AI setup service details">
-          <span class="re-index">02</span>
-          <h3>Modern Data Lakehouse</h3>
-
-          <!-- Animated AI Setup SVG with automated pipeline & illuminated tasks -->
-          <span class="mo-icon mo-icon-5" aria-hidden="true">
-            <svg viewBox="0 0 160 110" focusable="false" aria-hidden="true">
+<div class="re-service re-service-static" data-index="02">
+<span class="re-index">02</span>
+<h3>Modern Data Lakehouse</h3>
+<!-- Animated AI Setup SVG with automated pipeline & illuminated tasks -->
+<span aria-hidden="true" class="mo-icon mo-icon-5">
+<svg viewBox="0 0 160 110" focusable="false" aria-hidden="true">
               <rect x="6" y="6" width="148" height="98" rx="8" class="mo-i-frame"/>
               <path d="M6 26 H154" class="mo-i-line"/>
               <circle cx="18" cy="16" r="3" class="mo-i-dot"/>
@@ -371,27 +286,18 @@
                 </g>
               </g>
             </svg>
-          </span>
-
-          <p>AI set up in the email and software you already use, for the replies, requests and paperwork your team repeats, with training for your staff.</p>
-
-          <span class="re-service-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 18 18 6M6 6h12v12"/>
-            </svg>
-          </span>
-        </a>
-
-        <!-- ===================================================================
+</span>
+<p>Scalable big data engineering, unified governance, and enterprise-grade machine learning pipelines. High-performance cloud data warehousing and secure data sharing.</p>
+</div>
+<!-- ===================================================================
              SERVICE 03: REAL ESTATE WEBSITES
              =================================================================== -->
-        <a class="re-service" href="#real-estate" role="listitem" data-index="03" aria-label="Real estate websites service details">
-          <span class="re-index">03</span>
-          <h3>Applied AI &amp; Automation</h3>
-
-          <!-- Animated Real Estate SVG with bouncing map pin & radar ring pulse -->
-          <span class="mo-icon mo-icon-2" aria-hidden="true">
-            <svg viewBox="0 0 160 110" focusable="false" aria-hidden="true">
+<div class="re-service re-service-static" data-index="03">
+<span class="re-index">03</span>
+<h3>Applied AI &amp; Automation</h3>
+<!-- Animated Real Estate SVG with bouncing map pin & radar ring pulse -->
+<span aria-hidden="true" class="mo-icon mo-icon-2">
+<svg viewBox="0 0 160 110" focusable="false" aria-hidden="true">
               <rect x="6" y="6" width="148" height="98" rx="8" class="mo-i-frame"/>
               <path d="M6 26 H154" class="mo-i-line"/>
               <circle cx="18" cy="16" r="3" class="mo-i-dot"/>
@@ -417,27 +323,18 @@
                 <path d="M85 26 H95" class="mo-i-line"/>
               </g>
             </svg>
-          </span>
-
-          <p>Brokerage, property, shopping center, and property management websites, which are our specialty.</p>
-
-          <span class="re-service-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 18 18 6M6 6h12v12"/>
-            </svg>
-          </span>
-        </a>
-
-        <!-- ===================================================================
+</span>
+<p>Practical, secure, enterprise-grade AI embedded into existing workflows to eliminate high-volume cognitive busywork.</p>
+</div>
+<!-- ===================================================================
              SERVICE 04: BRANDING
              =================================================================== -->
-        <a class="re-service" href="#branding" role="listitem" data-index="04" aria-label="Branding service details">
-          <span class="re-index">04</span>
-          <h3>Microsoft Azure &amp; OpenAI</h3>
-
-          <!-- Animated Branding SVG with business card, logo seal & swatches -->
-          <span class="mo-icon mo-icon-4" aria-hidden="true">
-            <svg viewBox="0 0 160 110" focusable="false" aria-hidden="true">
+<div class="re-service re-service-static" data-index="04">
+<span class="re-index">04</span>
+<h3>Microsoft Azure &amp; OpenAI</h3>
+<!-- Animated Branding SVG with business card, logo seal & swatches -->
+<span aria-hidden="true" class="mo-icon mo-icon-4">
+<svg viewBox="0 0 160 110" focusable="false" aria-hidden="true">
               <rect x="6" y="6" width="148" height="98" rx="8" class="mo-i-frame"/>
               <path d="M6 26 H154" class="mo-i-line"/>
               <circle cx="18" cy="16" r="3" class="mo-i-dot"/>
@@ -457,27 +354,19 @@
                 <path d="M22 10 A24 24 0 0 1 54 10" class="mo-i-mark"/>
               </g>
             </svg>
-          </span>
+</span>
+<p>Enterprise Azure landing zones, secure private AI deployments, and hybrid cloud integration.</p>
 
-          <p>Logos, identities, and names for businesses and properties, with the artwork for signs, documents, and the web.</p>
-
-          <span class="re-service-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 18 18 6M6 6h12v12"/>
-            </svg>
-          </span>
-        </a>
-
-        <!-- ===================================================================
+</div>
+<!-- ===================================================================
              SERVICE 05: MARKETING MATERIALS
              =================================================================== -->
-        <a class="re-service" href="#marketing-materials" role="listitem" data-index="05" aria-label="Marketing materials service details">
-          <span class="re-index">05</span>
-          <h3>Amazon Web Services (AWS)</h3>
-
-          <!-- Animated Marketing Brochure SVG with 3D folding panels -->
-          <span class="mo-icon mo-icon-3" aria-hidden="true">
-            <svg viewBox="0 0 160 110" focusable="false" aria-hidden="true">
+<div class="re-service re-service-static" data-index="05">
+<span class="re-index">05</span>
+<h3>Amazon Web Services (AWS)</h3>
+<!-- Animated Marketing Brochure SVG with 3D folding panels -->
+<span aria-hidden="true" class="mo-icon mo-icon-3">
+<svg viewBox="0 0 160 110" focusable="false" aria-hidden="true">
               <rect x="6" y="6" width="148" height="98" rx="8" class="mo-i-frame"/>
               <path d="M6 26 H154" class="mo-i-line"/>
               <circle cx="18" cy="16" r="3" class="mo-i-dot"/>
@@ -494,55 +383,41 @@
                 <rect x="-11" y="22" width="22" height="16" rx="4" class="mo-i-card"/>
               </g>
             </svg>
-          </span>
+</span>
+<p>Serverless event-driven architectures, resilient multi-region infrastructure, and scalable cloud compute.</p>
 
-          <p>Brochures, offering memorandums, flyers, and presentations, designed for print and digital use.</p>
-
-          <span class="re-service-arrow" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 18 18 6M6 6h12v12"/>
-            </svg>
-          </span>
-        </a>
-
-      </div><!-- /re-service-list -->
-
-      <!-- Bottom Subtext with Sector Cross-Links -->
-      <p class="re-service-more" id="section-more">
-        We build architectures that scale seamlessly across <a href="#oracle-cloud">Oracle Cloud Infrastructure (OCI)</a>, <a href="#azure">Microsoft Azure</a>, <a href="#aws">Amazon Web Services (AWS)</a>, and <a href="#hybrid">hybrid on-premises environments</a> with zero vendor lock-in.
+</div>
+</div><!-- /re-service-list -->
+<!-- Bottom Subtext with Sector Cross-Links -->
+<p class="re-service-more" id="section-more">
+        We build architectures that scale seamlessly across <span class="platform-static-text">Oracle Cloud Infrastructure (OCI)</span>, <span class="platform-static-text">Microsoft Azure</span>, <span class="platform-static-text">Amazon Web Services (AWS)</span>, and <span class="platform-static-text">hybrid on-premises environments</span> with zero vendor lock-in.
       </p>
-
-    </section>
-
-
-  <!-- =========================================================================
+</section>
+<!-- =========================================================================
        SECTION 06: THE PROBLEM / THE BOTTLENECK & DATA TRUST GAP
        (Merged from Folder Aarkinn 6 & Matched to Royal Blue & Deep Navy Theme)
        ========================================================================= -->
-  <section class="event-highlights" id="problem" aria-labelledby="problem-heading">
-    <div class="shell">
-
-      <!-- Section Header -->
-      <div class="event-highlights__header">
-        <div class="eyebrow-badge">
-          <svg width="10" height="11" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<section aria-labelledby="problem-heading" class="event-highlights" id="problem">
+<div class="shell">
+<!-- Section Header -->
+<div class="event-highlights__header">
+<div class="eyebrow-badge">
+<svg width="10" height="11" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M1.07387 0.0924387L8.64148 4.3878C9.11951 4.65915 9.11951 5.33754 8.64148 5.60889L1.07387 9.90425C0.595848 10.1756 0 9.83807 0 9.29536V0.704643C0 0.161932 0.595848 -0.175607 1.07387 0.0957479V0.0924387Z" fill="#1e40af"/>
           </svg>
-          <span>THE BOTTLENECK</span>
-        </div>
-        <h2 class="event-highlights__title" id="problem-heading">The busywork is <span class="heading-accent">the real bottleneck.</span></h2>
-        <p class="event-highlights__subtitle">
-          Your systems aren't broken. They're just trapped in silos &mdash; quietly costing you deals, delaying executive reporting, and slowing delivery every month.
+<span>THE BOTTLENECK</span>
+</div>
+<h2 class="event-highlights__title" id="problem-heading">The busywork is <span class="heading-accent">the real bottleneck.</span></h2>
+<p class="event-highlights__subtitle">
+          Your systems aren't broken. They're just trapped in silos — quietly costing you deals, delaying executive reporting, and slowing delivery every month.
         </p>
-      </div>
-
-      <!-- 3-Card Interactive Grid -->
-      <div class="cards-grid">
-
-        <!-- Card 01: The Integration Chasm -->
-        <article class="fwrd-zoom-card fwrd-zoom-card--purple" aria-label="The Integration Chasm details">
-          <div class="fwrd-zoom-card__art" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="267" height="270" viewBox="0 0 267 270" fill="none">
+</div>
+<!-- 3-Card Interactive Grid -->
+<div class="cards-grid">
+<!-- Card 01: The Integration Chasm -->
+<article aria-label="The Integration Chasm details" class="fwrd-zoom-card fwrd-zoom-card--purple">
+<div aria-hidden="true" class="fwrd-zoom-card__art">
+<svg xmlns="http://www.w3.org/2000/svg" width="267" height="270" viewBox="0 0 267 270" fill="none">
               <g class="fwrd-background">
                 <path d="M0.378281 53.7086L1.18764e-05 262.373C-0.00715231 266.583 3.22784 270 7.22116 270H155.603C159.591 270 162.824 266.591 162.824 262.386V228.042C162.824 223.837 166.057 220.429 170.046 220.429H259.779C263.767 220.429 267 217.02 267 212.815V9.81707C267 4.39529 262.831 0 257.689 0H59.0059C55.0176 0 51.7844 3.40882 51.7844 7.61338V38.4954C51.7844 42.7003 48.5512 46.1092 44.5629 46.1092H7.59942C3.61649 46.1092 0.385445 49.5089 0.378281 53.7086Z" fill="#0f172a"/>
               </g>
@@ -553,29 +428,28 @@
                 </g>
               </g>
             </svg>
-          </div>
-          <div class="fwrd-zoom-card__title-layer">
-            <h3 class="fwrd-zoom-card__title">The Integration Chasm</h3>
-          </div>
-          <div class="fwrd-zoom-card__text-layer">
-            <p class="fwrd-zoom-card__desc">
+</div>
+<div class="fwrd-zoom-card__title-layer">
+<h3 class="fwrd-zoom-card__title">The Integration Chasm</h3>
+</div>
+<div class="fwrd-zoom-card__text-layer">
+<p class="fwrd-zoom-card__desc">
               Sales waits three days for custom quotes. Finance spends 15 hours every Monday reconciling ERP revenue with CRM pipelines across five contradictory spreadsheets.
             </p>
-          </div>
-          <div class="fwrd-zoom-card__toggle" aria-hidden="true">
-            <svg class="fwrd-zoom-card__toggle-plus" width="13" height="13" viewBox="0 0 13 13" fill="none">
+</div>
+<div aria-hidden="true" class="fwrd-zoom-card__toggle">
+<svg class="fwrd-zoom-card__toggle-plus" width="13" height="13" viewBox="0 0 13 13" fill="none">
               <path d="M1 6.2506H11.5012M6.2506 1V11.5012" stroke="#1e40af" stroke-width="2.2" stroke-linecap="round"/>
             </svg>
-            <svg class="fwrd-zoom-card__toggle-minus" width="12" height="2" viewBox="0 0 12 2" fill="none">
+<svg class="fwrd-zoom-card__toggle-minus" width="12" height="2" viewBox="0 0 12 2" fill="none">
               <line y1="1" x2="12" y2="1" stroke="#1e40af" stroke-width="2.2" stroke-linecap="round"/>
             </svg>
-          </div>
-        </article>
-
-        <!-- Card 02: The AI Foundation Trap -->
-        <article class="fwrd-zoom-card fwrd-zoom-card--pink" aria-label="The AI Foundation Trap details">
-          <div class="fwrd-zoom-card__art" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="267" height="270" viewBox="0 0 267 270" fill="none">
+</div>
+</article>
+<!-- Card 02: The AI Foundation Trap -->
+<article aria-label="The AI Foundation Trap details" class="fwrd-zoom-card fwrd-zoom-card--pink">
+<div aria-hidden="true" class="fwrd-zoom-card__art">
+<svg xmlns="http://www.w3.org/2000/svg" width="267" height="270" viewBox="0 0 267 270" fill="none">
               <g class="fwrd-background">
                 <path d="M0.378281 53.7086L1.18764e-05 262.373C-0.00715231 266.583 3.22784 270 7.22116 270H155.603C159.591 270 162.824 266.591 162.824 262.386V228.042C162.824 223.837 166.057 220.429 170.046 220.429H259.779C263.767 220.429 267 217.02 267 212.815V9.81707C267 4.39529 262.831 0 257.689 0H59.0059C55.0176 0 51.7844 3.40882 51.7844 7.61338V38.4954C51.7844 42.7003 48.5512 46.1092 44.5629 46.1092H7.59942C3.61649 46.1092 0.385445 49.5089 0.378281 53.7086Z" fill="#172554"/>
               </g>
@@ -586,29 +460,28 @@
                 </g>
               </g>
             </svg>
-          </div>
-          <div class="fwrd-zoom-card__title-layer">
-            <h3 class="fwrd-zoom-card__title">The AI Foundation Trap</h3>
-          </div>
-          <div class="fwrd-zoom-card__text-layer">
-            <p class="fwrd-zoom-card__desc">
+</div>
+<div class="fwrd-zoom-card__title-layer">
+<h3 class="fwrd-zoom-card__title">The AI Foundation Trap</h3>
+</div>
+<div class="fwrd-zoom-card__text-layer">
+<p class="fwrd-zoom-card__desc">
               Skipping core ERP and lakehouse foundations to build speculative AI pilots is why 85% of corporate AI projects stall. AI is only as capable as the data underneath it.
             </p>
-          </div>
-          <div class="fwrd-zoom-card__toggle" aria-hidden="true">
-            <svg class="fwrd-zoom-card__toggle-plus" width="13" height="13" viewBox="0 0 13 13" fill="none">
+</div>
+<div aria-hidden="true" class="fwrd-zoom-card__toggle">
+<svg class="fwrd-zoom-card__toggle-plus" width="13" height="13" viewBox="0 0 13 13" fill="none">
               <path d="M1 6.2506H11.5012M6.2506 1V11.5012" stroke="#1e40af" stroke-width="2.2" stroke-linecap="round"/>
             </svg>
-            <svg class="fwrd-zoom-card__toggle-minus" width="12" height="2" viewBox="0 0 12 2" fill="none">
+<svg class="fwrd-zoom-card__toggle-minus" width="12" height="2" viewBox="0 0 12 2" fill="none">
               <line y1="1" x2="12" y2="1" stroke="#1e40af" stroke-width="2.2" stroke-linecap="round"/>
             </svg>
-          </div>
-        </article>
-
-        <!-- Card 03: Cognitive Busywork -->
-        <article class="fwrd-zoom-card fwrd-zoom-card--yellow" aria-label="Cognitive Busywork details">
-          <div class="fwrd-zoom-card__art" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="267" height="270" viewBox="0 0 267 270" fill="none">
+</div>
+</article>
+<!-- Card 03: Cognitive Busywork -->
+<article aria-label="Cognitive Busywork details" class="fwrd-zoom-card fwrd-zoom-card--yellow">
+<div aria-hidden="true" class="fwrd-zoom-card__art">
+<svg xmlns="http://www.w3.org/2000/svg" width="267" height="270" viewBox="0 0 267 270" fill="none">
               <g class="fwrd-background">
                 <path d="M0.378281 53.7086L1.18764e-05 262.373C-0.00715231 266.583 3.22784 270 7.22116 270H155.603C159.591 270 162.824 266.591 162.824 262.386V228.042C162.824 223.837 166.057 220.429 170.046 220.429H259.779C263.767 220.429 267 217.02 267 212.815V9.81707C267 4.39529 262.831 0 257.689 0H59.0059C55.0176 0 51.7844 3.40882 51.7844 7.61338V38.4954C51.7844 42.7003 48.5512 46.1092 44.5629 46.1092H7.59942C3.61649 46.1092 0.385445 49.5089 0.378281 53.7086Z" fill="#1e40af"/>
               </g>
@@ -620,31 +493,29 @@
                 </g>
               </g>
             </svg>
-          </div>
-          <div class="fwrd-zoom-card__title-layer">
-            <h3 class="fwrd-zoom-card__title">Cognitive Busywork</h3>
-          </div>
-          <div class="fwrd-zoom-card__text-layer">
-            <p class="fwrd-zoom-card__desc">
+</div>
+<div class="fwrd-zoom-card__title-layer">
+<h3 class="fwrd-zoom-card__title">Cognitive Busywork</h3>
+</div>
+<div class="fwrd-zoom-card__text-layer">
+<p class="fwrd-zoom-card__desc">
               Your best people are copying data between systems, answering repetitive RFPs from scratch, and manually keying order numbers from PDFs instead of growing the business.
             </p>
-          </div>
-          <div class="fwrd-zoom-card__toggle" aria-hidden="true">
-            <svg class="fwrd-zoom-card__toggle-plus" width="13" height="13" viewBox="0 0 13 13" fill="none">
+</div>
+<div aria-hidden="true" class="fwrd-zoom-card__toggle">
+<svg class="fwrd-zoom-card__toggle-plus" width="13" height="13" viewBox="0 0 13 13" fill="none">
               <path d="M1 6.2506H11.5012M6.2506 1V11.5012" stroke="#1e40af" stroke-width="2.2" stroke-linecap="round"/>
             </svg>
-            <svg class="fwrd-zoom-card__toggle-minus" width="12" height="2" viewBox="0 0 12 2" fill="none">
+<svg class="fwrd-zoom-card__toggle-minus" width="12" height="2" viewBox="0 0 12 2" fill="none">
               <line y1="1" x2="12" y2="1" stroke="#1e40af" stroke-width="2.2" stroke-linecap="round"/>
             </svg>
-          </div>
-        </article>
-
-      </div><!-- /.cards-grid -->
-
-      <!-- Lower Stat Banner (67% Callout) -->
-      <aside class="stat-banner" aria-label="Data trust statistics">
-        <div class="stat-banner__art" aria-hidden="true">
-          <svg width="294" height="238" viewBox="0 0 294 238" fill="none" xmlns="http://www.w3.org/2000/svg">
+</div>
+</article>
+</div><!-- /.cards-grid -->
+<!-- Lower Stat Banner (67% Callout) -->
+<aside aria-label="Data trust statistics" class="stat-banner">
+<div aria-hidden="true" class="stat-banner__art">
+<svg width="294" height="238" viewBox="0 0 294 238" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_stat" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="294" height="238">
               <rect width="294" height="238" fill="#1e40af"/>
             </mask>
@@ -654,67 +525,58 @@
               <path d="M173.475 55.945C173.042 54.125 172.284 52.76 171.2 51.85C170.16 50.94 168.644 50.485 166.65 50.485C163.66 50.485 161.45 51.6983 160.02 54.125C158.634 56.5083 157.919 60.4083 157.875 65.825C158.915 64.0917 160.432 62.7483 162.425 61.795C164.419 60.7983 166.585 60.3 168.925 60.3C171.742 60.3 174.234 60.9067 176.4 62.12C178.567 63.3333 180.257 65.11 181.47 67.45C182.684 69.7467 183.29 72.52 183.29 75.77C183.29 78.8467 182.662 81.5983 181.405 84.025C180.192 86.4083 178.394 88.2717 176.01 89.615C173.627 90.9583 170.789 91.63 167.495 91.63C162.989 91.63 159.435 90.6333 156.835 88.64C154.279 86.6467 152.48 83.8733 151.44 80.32C150.444 76.7233 149.945 72.3033 149.945 67.06C149.945 59.13 151.31 53.15 154.04 49.12C156.77 45.0467 161.082 43.01 166.975 43.01C171.525 43.01 175.057 44.245 177.57 46.715C180.084 49.185 181.535 52.2617 181.925 55.945H173.475ZM166.845 67.775C164.549 67.775 162.62 68.4467 161.06 69.79C159.5 71.1333 158.72 73.0833 158.72 75.64C158.72 78.1967 159.435 80.2117 160.865 81.685C162.339 83.1583 164.397 83.895 167.04 83.895C169.38 83.895 171.222 83.18 172.565 81.75C173.952 80.32 174.645 78.3917 174.645 75.965C174.645 73.4517 173.974 71.4583 172.63 69.985C171.33 68.5117 169.402 67.775 166.845 67.775ZM218.643 51.005L201.353 91.5H192.123L209.543 52.045H187.313V44.245H218.643V51.005ZM221.053 55.75C221.053 52.4567 222.006 49.8783 223.913 48.015C225.863 46.1517 228.355 45.22 231.388 45.22C234.421 45.22 236.891 46.1517 238.798 48.015C240.748 49.8783 241.723 52.4567 241.723 55.75C241.723 59.0867 240.748 61.6867 238.798 63.55C236.891 65.4133 234.421 66.345 231.388 66.345C228.355 66.345 225.863 65.4133 223.913 63.55C222.006 61.6867 221.053 59.0867 221.053 55.75ZM262.783 46L237.238 91.5H228.398L253.878 46H262.783ZM231.323 50.68C228.94 50.68 227.748 52.37 227.748 55.75C227.748 59.1733 228.94 60.885 231.323 60.885C232.493 60.885 233.403 60.4733 234.053 59.65C234.703 58.7833 235.028 57.4833 235.028 55.75C235.028 52.37 233.793 50.68 231.323 50.68ZM249.588 81.685C249.588 78.3483 250.541 75.77 252.448 73.95C254.398 72.0867 256.89 71.155 259.923 71.155C262.956 71.155 265.405 72.0867 267.268 73.95C269.175 75.77 270.128 78.3483 270.128 81.685C270.128 85.0217 269.175 87.6217 267.268 89.485C265.405 91.3483 262.956 92.28 259.923 92.28C256.846 92.28 254.355 91.3483 252.448 89.485C250.541 87.6217 249.588 85.0217 249.588 81.685ZM259.858 76.615C257.388 76.615 256.153 78.305 256.153 81.685C256.153 85.1083 257.388 86.82 259.858 86.82C262.285 86.82 263.498 85.1083 263.498 81.685C263.498 78.305 262.285 76.615 259.858 76.615Z" fill="#090d16"/>
             </g>
           </svg>
-        </div>
-
-        <div class="stat-banner__content">
-          <h3 class="stat-banner__heading">
+</div>
+<div class="stat-banner__content">
+<h3 class="stat-banner__heading">
             of data leaders don't fully trust the reports in their organisation. Yet they're being asked to scale AI faster than ever.
           </h3>
-          <ul class="stat-banner__list">
-            <li class="stat-banner__item">
-              <span class="stat-banner__item-icon" aria-hidden="true">
-                <svg width="8" height="9" viewBox="0 0 8 9" fill="none">
+<ul class="stat-banner__list">
+<li class="stat-banner__item">
+<span aria-hidden="true" class="stat-banner__item-icon">
+<svg width="8" height="9" viewBox="0 0 8 9" fill="none">
                   <path d="M1 1.5L7 4.5L1 7.5V1.5Z" fill="currentColor"/>
                 </svg>
-              </span>
-              <span>Why disconnected systems quietly cost revenue every quarter</span>
-            </li>
-            <li class="stat-banner__item">
-              <span class="stat-banner__item-icon" aria-hidden="true">
-                <svg width="8" height="9" viewBox="0 0 8 9" fill="none">
+</span>
+<span>Why disconnected systems quietly cost revenue every quarter</span>
+</li>
+<li class="stat-banner__item">
+<span aria-hidden="true" class="stat-banner__item-icon">
+<svg width="8" height="9" viewBox="0 0 8 9" fill="none">
                   <path d="M1 1.5L7 4.5L1 7.5V1.5Z" fill="currentColor"/>
                 </svg>
-              </span>
-              <span>How senior architects eliminate manual reconciliation</span>
-            </li>
-            <li class="stat-banner__item">
-              <span class="stat-banner__item-icon" aria-hidden="true">
-                <svg width="8" height="9" viewBox="0 0 8 9" fill="none">
+</span>
+<span>How senior architects eliminate manual reconciliation</span>
+</li>
+<li class="stat-banner__item">
+<span aria-hidden="true" class="stat-banner__item-icon">
+<svg width="8" height="9" viewBox="0 0 8 9" fill="none">
                   <path d="M1 1.5L7 4.5L1 7.5V1.5Z" fill="currentColor"/>
                 </svg>
-              </span>
-              <span>Foundations first, automation second, applied AI third</span>
-            </li>
-          </ul>
-        </div>
-      </aside>
-
-    </div><!-- /.shell -->
-  </section><!-- /#problem .event-highlights -->
-
-
-  
-
-
-  <!-- =========================================================================
+</span>
+<span>Foundations first, automation second, applied AI third</span>
+</li>
+</ul>
+</div>
+</aside>
+</div><!-- /.shell -->
+</section><!-- /#problem .event-highlights -->
+<!-- =========================================================================
        SECTION 10: ENGAGEMENT MODELS & THE DELIVERY JOURNEY (FROM AARKINN 7)
        1:1 Serpentine Curve, Radar Pulse Tracker & Interactive Milestone Cards
        ========================================================================= -->
-  <section class="journey" id="models" aria-label="AARK Delivery Journey and Engagement Models">
-    <!-- Section Header -->
-    <div class="journey-header">
-      <span class="journey-eyebrow">Engagement Models &bull; Predictable Enterprise Delivery</span>
-      <h2 class="journey-title">From Operational Friction <span class="heading-accent">to Working Software</span></h2>
-      <p class="journey-subtitle">
+<section aria-label="AARK Delivery Journey and Engagement Models" class="journey" id="models">
+<!-- Section Header -->
+<div class="journey-header">
+<span class="journey-eyebrow">Engagement Models • Predictable Enterprise Delivery</span>
+<h2 class="journey-title">From Operational Friction <span class="heading-accent">to Working Software</span></h2>
+<p class="journey-subtitle">
         No 80-page strategy decks that sit on a shelf. No junior handoffs or surprise billings. A disciplined, sequential journey from diagnostic blueprint to production cutover.
       </p>
-    </div>
-
-    <!-- Stage with Serpentine SVG Spine, Weaving Nodes, and Absolute Placed Cards -->
-    <div class="journey-stage">
-      
-      <!-- SVG Vector Snake Spine & Traveling Marker Rings -->
-      <svg class="journey-svg" viewBox="0 0 302 2186" width="302" height="2186" aria-hidden="true" focusable="false">
+</div>
+<!-- Stage with Serpentine SVG Spine, Weaving Nodes, and Absolute Placed Cards -->
+<div class="journey-stage">
+<!-- SVG Vector Snake Spine & Traveling Marker Rings -->
+<svg class="journey-svg" viewBox="0 0 302 2186" width="302" height="2186" aria-hidden="true" focusable="false">
         <!-- Background animated dotted track -->
         <path class="journey-svg-dots" d="M161 1V92.52C161 139.32 161 139.32 132 167.01L30 264.51C1 292.2 1 292.2 1 339V365V456.52C1 503.32 1 503.32 34.5 520.35L267.5 639.17C301 656.2 301 656.2 301 703V729V820.52C301 867.32 301 867.32 268.2 886.56L73.8 1000.96C41 1020.2 41 1020.2 41 1067V1093V1184.52C41 1231.32 41 1231.32 73.3 1251.86L248.7 1363.66C281 1384.2 281 1384.2 281 1431V1457V1548.52C281 1595.32 281 1595.32 249.3 1617.42L92.7 1726.1C61 1748.2 61 1748.2 61 1795V1821V1912.52C61 1959.32 61 1959.32 84.3 1994.94L137.7 2076.58C161 2112.2 161 2112.2 161 2159V2185" />
         
@@ -729,524 +591,469 @@
           <circle class="journey-marker-ring" r="44" />
         </g>
       </svg>
-
-      <!-- 7 Alternating Milestone Center Nodes -->
-      <ol class="journey-nodes" aria-hidden="true">
-        <li class="journey-node journey-node-1 is-active" title="Step 1: Rapid Diagnostic">
-          <svg class="journey-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<!-- 7 Alternating Milestone Center Nodes -->
+<ol class="journey-nodes">
+<li class="journey-node journey-node-1 is-active" title="Step 1: Rapid Diagnostic">
+<svg class="journey-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M14 3v5h5"/><path d="M6 3h8l5 5v13H6z"/><path d="M9 13h6M9 17h6"/>
           </svg>
-        </li>
-        <li class="journey-node journey-node-2" title="Step 2: Architecture Blueprint">
-          <svg class="journey-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+</li>
+<li class="journey-node journey-node-2" title="Step 2: Architecture Blueprint">
+<svg class="journey-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/><path d="M7 12l3-3 2 2 4-4"/>
           </svg>
-        </li>
-        <li class="journey-node journey-node-3" title="Step 3: Core Foundation Sprint">
-          <svg class="journey-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+</li>
+<li class="journey-node journey-node-3" title="Step 3: Core Foundation Sprint">
+<svg class="journey-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 3l8 3v6c0 4.5-3.4 7.7-8 9-4.6-1.3-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/>
           </svg>
-        </li>
-        <li class="journey-node journey-node-4" title="Step 4: Automated Middleware">
-          <svg class="journey-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+</li>
+<li class="journey-node journey-node-4" title="Step 4: Automated Middleware">
+<svg class="journey-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5z"/>
           </svg>
-        </li>
-        <li class="journey-node journey-node-5" title="Step 5: Applied AI Workflows">
-          <svg class="journey-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+</li>
+<li class="journey-node journey-node-5" title="Step 5: Applied AI Workflows">
+<svg class="journey-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/><path d="M8.5 11h5"/>
           </svg>
-        </li>
-        <li class="journey-node journey-node-6" title="Step 6: Approval Gates">
-          <svg class="journey-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+</li>
+<li class="journey-node journey-node-6" title="Step 6: Approval Gates">
+<svg class="journey-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12.5l2.5 2.5L16 9.5"/>
           </svg>
-        </li>
-        <li class="journey-node journey-node-7" title="Step 7: Production Cutover">
-          <svg class="journey-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+</li>
+<li class="journey-node journey-node-7" title="Step 7: Production Cutover">
+<svg class="journey-node-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 4v16M4 20h16"/><path d="M5 9l7-3 7 3"/><path d="M2.5 14l2.5-5 2.5 5a2.5 2.5 0 0 1-5 0zM16.5 14l2.5-5 2.5 5a2.5 2.5 0 0 1-5 0z"/>
           </svg>
-        </li>
-      </ol>
-
-      <!-- 7 Feature Cards (Stage coordinates matching Figma & Reference) -->
-      <ol class="journey-cards">
-        <!-- Step 1 (Left) -->
-        <li class="journey-card journey-card-1 is-active">
-          <div class="journey-card-text">
-            <span class="journey-card-step">Step 1 &bull; Diagnostic</span>
-            <div class="journey-card-copy">
-              <h3 class="journey-card-title">Rapid Operational Diagnostic</h3>
-              <p class="journey-card-desc">We inspect your core ERP (Oracle Fusion/EBS), data pipelines, and manual spreadsheet workflows to identify exact friction points and quantify lost hours.</p>
-            </div>
-          </div>
-          <p class="journey-card-note">Start with clarity — a 2- to 3-week deep dive before writing a single line of code.</p>
-        </li>
-
-        <!-- Step 2 (Right) -->
-        <li class="journey-card journey-card-2">
-          <div class="journey-card-text">
-            <span class="journey-card-step">Step 2 &bull; Blueprint</span>
-            <div class="journey-card-copy">
-              <h3 class="journey-card-title">Architectural Blueprint &amp; Fixed-Scope Certainty</h3>
-              <p class="journey-card-desc">Clear milestones, fixed timelines, and fixed pricing. You receive an architectural roadmap with exact effort estimates, risk factors, and projected ROI.</p>
-            </div>
-          </div>
-          <p class="journey-card-note">No surprise invoices, running meters, or open-ended billable hours.</p>
-        </li>
-
-        <!-- Step 3 (Left) -->
-        <li class="journey-card journey-card-3">
-          <div class="journey-card-text">
-            <span class="journey-card-step">Step 3 &bull; Core Stack</span>
-            <div class="journey-card-copy">
-              <h3 class="journey-card-title">Core ERP &amp; Lakehouse Foundation Sprint</h3>
-              <p class="journey-card-desc">Senior architects configure enterprise Oracle modules and unify disconnected operational feeds into high-performance cloud data lakehouses (Snowflake, Databricks, OCI).</p>
-            </div>
-          </div>
-          <p class="journey-card-note">Foundations first — clean transactional reality before automation.</p>
-        </li>
-
-        <!-- Step 4 (Right) -->
-        <li class="journey-card journey-card-4">
-          <div class="journey-card-text">
-            <span class="journey-card-step">Step 4 &bull; Automation</span>
-            <div class="journey-card-copy">
-              <h3 class="journey-card-title">Middleware &amp; Automated API Bridges</h3>
-              <p class="journey-card-desc">Deploy reliable real-time event streaming and API middleware. Routine CRM leads, sales quotes, and ERP revenue reconcile automatically across your ecosystem.</p>
-            </div>
-          </div>
-          <p class="journey-card-note">Automate the glue — eliminate cross-system data re-entry completely.</p>
-        </li>
-
-        <!-- Step 5 (Left) -->
-        <li class="journey-card journey-card-5">
-          <div class="journey-card-text">
-            <span class="journey-card-step">Step 5 &bull; Applied AI</span>
-            <div class="journey-card-copy">
-              <h3 class="journey-card-title">Enterprise Applied AI &amp; Cognitive Workflows</h3>
-              <p class="journey-card-desc">Deploy private domain AI to automate high-volume knowledge tasks: instant RFP responses with footnote citations, dynamic CPQ pricing, and invoice parsing.</p>
-            </div>
-          </div>
-          <p class="journey-card-note">AI grounded strictly in verified source data — zero speculative novelty.</p>
-        </li>
-
-        <!-- Step 6 (Right) -->
-        <li class="journey-card journey-card-6">
-          <div class="journey-card-text">
-            <span class="journey-card-step">Step 6 &bull; Safeguards</span>
-            <div class="journey-card-copy">
-              <h3 class="journey-card-title">Human-in-the-Loop Verification &amp; Approval Gates</h3>
-              <p class="journey-card-desc">Every automated action, complex discount, or critical data transformation includes explicit exception routing and human approval gates before final ERP commit.</p>
-            </div>
-          </div>
-          <p class="journey-card-note">The approval gate — your team remains in total control at all times.</p>
-        </li>
-
-        <!-- Step 7 (Center Bottom) -->
-        <li class="journey-card journey-card-7">
-          <div class="journey-card-text">
-            <span class="journey-card-step">Step 7 &bull; Production</span>
-            <div class="journey-card-copy">
-              <h3 class="journey-card-title">Production Cutover &amp; Complete Knowledge Transfer</h3>
-              <p class="journey-card-desc">Thorough testing, user training, and complete documentation with zero vendor lock-in. Your internal engineering team owns the code and operates with total independence.</p>
-            </div>
-          </div>
-          <p class="journey-card-note">Working software delivered in 2 to 4 weeks with dedicated post-launch support.</p>
-        </li>
-      </ol>
-    </div>
-
-    <!-- Bottom Reassurance Note -->
-    <div class="journey-cta">
-      <p class="journey-cta-note">
+</li>
+</ol>
+<!-- 7 Feature Cards (Stage coordinates matching Figma & Reference) -->
+<ol class="journey-cards">
+<!-- Step 1 (Left) -->
+<li class="journey-card journey-card-1 is-active" id="journey-step-1">
+<div class="journey-card-text">
+<span class="journey-card-step">Step 1 • Diagnostic</span>
+<div class="journey-card-copy">
+<h3 class="journey-card-title">Rapid Operational Diagnostic</h3>
+<p class="journey-card-desc">We inspect your core ERP (Oracle Fusion/EBS), data pipelines, and manual spreadsheet workflows to identify exact friction points and quantify lost hours.</p>
+</div>
+</div>
+<p class="journey-card-note">Start with clarity — a 2- to 3-week deep dive before writing a single line of code.</p>
+</li>
+<!-- Step 2 (Right) -->
+<li class="journey-card journey-card-2" id="journey-step-2">
+<div class="journey-card-text">
+<span class="journey-card-step">Step 2 • Blueprint</span>
+<div class="journey-card-copy">
+<h3 class="journey-card-title">Architectural Blueprint &amp; Fixed-Scope Certainty</h3>
+<p class="journey-card-desc">Clear milestones, fixed timelines, and fixed pricing. You receive an architectural roadmap with exact effort estimates, risk factors, and projected ROI.</p>
+</div>
+</div>
+<p class="journey-card-note">No surprise invoices, running meters, or open-ended billable hours.</p>
+</li>
+<!-- Step 3 (Left) -->
+<li class="journey-card journey-card-3" id="journey-step-3">
+<div class="journey-card-text">
+<span class="journey-card-step">Step 3 • Core Stack</span>
+<div class="journey-card-copy">
+<h3 class="journey-card-title">Core ERP &amp; Lakehouse Foundation Sprint</h3>
+<p class="journey-card-desc">Senior architects configure enterprise Oracle modules and unify disconnected operational feeds into high-performance cloud data lakehouses (Snowflake, Databricks, OCI).</p>
+</div>
+</div>
+<p class="journey-card-note">Foundations first — clean transactional reality before automation.</p>
+</li>
+<!-- Step 4 (Right) -->
+<li class="journey-card journey-card-4" id="journey-step-4">
+<div class="journey-card-text">
+<span class="journey-card-step">Step 4 • Automation</span>
+<div class="journey-card-copy">
+<h3 class="journey-card-title">Middleware &amp; Automated API Bridges</h3>
+<p class="journey-card-desc">Deploy reliable real-time event streaming and API middleware. Routine CRM leads, sales quotes, and ERP revenue reconcile automatically across your ecosystem.</p>
+</div>
+</div>
+<p class="journey-card-note">Automate the glue — eliminate cross-system data re-entry completely.</p>
+</li>
+<!-- Step 5 (Left) -->
+<li class="journey-card journey-card-5" id="journey-step-5">
+<div class="journey-card-text">
+<span class="journey-card-step">Step 5 • Applied AI</span>
+<div class="journey-card-copy">
+<h3 class="journey-card-title">Enterprise Applied AI &amp; Cognitive Workflows</h3>
+<p class="journey-card-desc">Deploy private domain AI to automate high-volume knowledge tasks: instant RFP responses with footnote citations, dynamic CPQ pricing, and invoice parsing.</p>
+</div>
+</div>
+<p class="journey-card-note">AI grounded strictly in verified source data — zero speculative novelty.</p>
+</li>
+<!-- Step 6 (Right) -->
+<li class="journey-card journey-card-6" id="journey-step-6">
+<div class="journey-card-text">
+<span class="journey-card-step">Step 6 • Safeguards</span>
+<div class="journey-card-copy">
+<h3 class="journey-card-title">Human-in-the-Loop Verification &amp; Approval Gates</h3>
+<p class="journey-card-desc">Every automated action, complex discount, or critical data transformation includes explicit exception routing and human approval gates before final ERP commit.</p>
+</div>
+</div>
+<p class="journey-card-note">The approval gate — your team remains in total control at all times.</p>
+</li>
+<!-- Step 7 (Center Bottom) -->
+<li class="journey-card journey-card-7" id="journey-step-7">
+<div class="journey-card-text">
+<span class="journey-card-step">Step 7 • Production</span>
+<div class="journey-card-copy">
+<h3 class="journey-card-title">Production Cutover &amp; Complete Knowledge Transfer</h3>
+<p class="journey-card-desc">Thorough testing, user training, and complete documentation with zero vendor lock-in. Your internal engineering team owns the code and operates with total independence.</p>
+</div>
+</div>
+<p class="journey-card-note">Working software delivered in 2 to 4 weeks with dedicated post-launch support.</p>
+</li>
+</ol>
+</div>
+<!-- Bottom Reassurance Note -->
+<div class="journey-cta">
+<p class="journey-cta-note">
         Fixed-scope certainty. Senior practitioners on day one. Production releases in 2 to 4 weeks.
       </p>
-    </div>
-  </section>
-
-
-  <!-- =========================================================================
+</div>
+</section>
+<!-- =========================================================================
        08. CTA SECTION (MATCHING REFERENCE DESIGN)
        Rounded banner card, ambient waves, two-tone typography & pill button
        ========================================================================= -->
-  <section class="section-cta" id="cta">
-    <div class="cta-container">
-      <div class="cta-card">
-        <!-- Ambient Decorative Contour Lines SVG -->
-        <svg class="cta-contour-lines" viewBox="0 0 700 350" fill="none" preserveAspectRatio="none" aria-hidden="true">
+<section class="section-cta" id="cta">
+<div class="cta-container">
+<div class="cta-card">
+<!-- Ambient Decorative Contour Lines SVG -->
+<svg class="cta-contour-lines" viewBox="0 0 700 350" fill="none" preserveAspectRatio="none" aria-hidden="true">
           <path d="M 100 0 C 250 80, 450 60, 700 120" stroke="currentColor" stroke-width="1.4" stroke-opacity="0.22" />
           <path d="M 180 0 C 320 110, 500 90, 700 180" stroke="currentColor" stroke-width="1.4" stroke-opacity="0.17" />
           <path d="M 260 0 C 400 140, 560 120, 700 240" stroke="currentColor" stroke-width="1.4" stroke-opacity="0.13" />
           <path d="M 340 0 C 470 170, 610 150, 700 290" stroke="currentColor" stroke-width="1.4" stroke-opacity="0.09" />
           <path d="M 420 0 C 530 200, 660 180, 700 340" stroke="currentColor" stroke-width="1.4" stroke-opacity="0.06" />
         </svg>
-
-        <div class="cta-content">
-          <h2 class="cta-title">
+<div class="cta-content">
+<h2 class="cta-title">
             Let’s Build Technology That Moves Your Business <span class="heading-accent">Forward</span>
-          </h2>
-          <p class="cta-subtitle">
+</h2>
+<p class="cta-subtitle">
             Build scalable software with experienced technology partners focused on your growth.
           </p>
-          <div class="cta-actions">
-            <a href="#contact" class="btn-cta-pill">
-              <span class="btn-text">Start Your Project</span>
-              <span class="btn-icon-bubble" aria-hidden="true">
-                <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+<div class="cta-actions">
+<a class="btn-cta-pill" href="#contact">
+<span class="btn-text">Start Your Project</span>
+<span aria-hidden="true" class="btn-icon-bubble">
+<svg width="15" height="15" viewBox="0 0 16 16" fill="none">
                   <path d="M3.33337 8H12.6667" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M8 3.33331L12.6667 7.99998L8 12.6666" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================================================================
+</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
        09. FAQ SECTION (MATCHING REFERENCE DESIGN)
        Sticky support sidebar card + 6-item interactive accordion
        ========================================================================= -->
-  <section class="section-faq" id="faq">
-    <div class="faq-layout">
-      <!-- Left Panel: Full-height panel with wavy contour image top & support action bottom -->
-      <div class="faq-left-panel">
-        <div class="faq-wave-wrap">
-          <img src="assets/aark-faq-bg.svg" alt="" class="faq-wave-img" aria-hidden="true" />
-        </div>
-        <div class="faq-left-content">
-          <p class="faq-left-text">
+<section class="section-faq" id="faq">
+<div class="faq-layout">
+<!-- Left Panel: Full-height panel with wavy contour image top & support action bottom -->
+<div class="faq-left-panel">
+<div class="faq-wave-wrap">
+<img alt="" aria-hidden="true" class="faq-wave-img" src="assets/aark-faq-bg.webp">
+</img></div>
+<div class="faq-left-content">
+<p class="faq-left-text">
             Still have questions? Book a call with our friendly team to get all your questions and queries answered.
           </p>
-          <a href="#contact" class="btn btn-faq-schedule">
-            <span class="btn-text">Schedule a call</span>
-            <span class="btn-icon-bubble" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+<a class="btn btn-faq-schedule" href="#contact">
+<span class="btn-text">Schedule a call</span>
+<span aria-hidden="true" class="btn-icon-bubble">
+<svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                 <path d="M3.33337 8H12.6667" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M8 3.33331L12.6667 7.99998L8 12.6666" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Right Panel: FAQ Header (Label, H2, Subtitle) + Accordion List -->
-      <div class="faq-right-panel">
-        <div class="faq-header">
-          <span class="faq-label">FAQ</span>
-          <h2 class="faq-title">
+</span>
+</a>
+</div>
+</div>
+<!-- Right Panel: FAQ Header (Label, H2, Subtitle) + Accordion List -->
+<div class="faq-right-panel">
+<div class="faq-header">
+<span class="faq-label">FAQ</span>
+<h2 class="faq-title">
             Frequently Asked <span class="heading-accent">Questions</span>
-          </h2>
-          <p class="faq-subtitle">
+</h2>
+<p class="faq-subtitle">
             Explore How We Turn Client Challenges into Triumphs Across Diverse Sectors with Cutting-Edge Technologies.
           </p>
-        </div>
-
-        <!-- Accordion List -->
-        <div class="faq-accordion" role="region" aria-label="Frequently Asked Questions">
-          <!-- Item 1 -->
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">What if we have an idea but not a complete product plan?</span>
-              <span class="faq-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+</div>
+<!-- Accordion List -->
+<div aria-label="Frequently Asked Questions" class="faq-accordion" role="region">
+<!-- Item 1 -->
+<div class="faq-item">
+<button aria-controls="faq-answer-1" aria-expanded="false" class="faq-question" type="button">
+<span class="faq-question-text">What if we have an idea but not a complete product plan?</span>
+<span aria-hidden="true" class="faq-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
-              </span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
+</span>
+</button>
+<div class="faq-answer" id="faq-answer-1">
+<div class="faq-answer-inner">
                 That is completely normal and where we do our best work. We run structured technical and product discovery sessions to validate architecture, refine feature scopes, identify technical risks, and draft a phased roadmap before writing a single line of production code.
               </div>
-            </div>
-          </div>
-
-          <!-- Item 2 -->
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">How do you decide what technology or approach a project actually needs?</span>
-              <span class="faq-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+</div>
+</div>
+<!-- Item 2 -->
+<div class="faq-item">
+<button aria-controls="faq-answer-2" aria-expanded="false" class="faq-question" type="button">
+<span class="faq-question-text">How do you decide what technology or approach a project actually needs?</span>
+<span aria-hidden="true" class="faq-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
-              </span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
+</span>
+</button>
+<div class="faq-answer" id="faq-answer-2">
+<div class="faq-answer-inner">
                 We evaluate your existing infrastructure, enterprise constraints, scalability targets, and team capabilities. We recommend technologies based strictly on production reliability, total cost of ownership, and performance—never novelty or vendor hype.
               </div>
-            </div>
-          </div>
-
-          <!-- Item 3 -->
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">Can you work with software built by another development team?</span>
-              <span class="faq-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+</div>
+</div>
+<!-- Item 3 -->
+<div class="faq-item">
+<button aria-controls="faq-answer-3" aria-expanded="false" class="faq-question" type="button">
+<span class="faq-question-text">Can you work with software built by another development team?</span>
+<span aria-hidden="true" class="faq-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
-              </span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
+</span>
+</button>
+<div class="faq-answer" id="faq-answer-3">
+<div class="faq-answer-inner">
                 Yes. A significant portion of our engagements involve taking over, modernizing, or augmenting existing enterprise applications. We conduct a thorough architectural and code quality audit, remediate technical debt, and establish automated CI/CD pipelines to ensure seamless continuity.
               </div>
-            </div>
-          </div>
-
-          <!-- Item 4 -->
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">What happens when the best technical solution does not fit the business?</span>
-              <span class="faq-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+</div>
+</div>
+<!-- Item 4 -->
+<div class="faq-item">
+<button aria-controls="faq-answer-4" aria-expanded="false" class="faq-question" type="button">
+<span class="faq-question-text">What happens when the best technical solution does not fit the business?</span>
+<span aria-hidden="true" class="faq-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
-              </span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
+</span>
+</button>
+<div class="faq-answer" id="faq-answer-4">
+<div class="faq-answer-inner">
                 Business reality always takes precedence over pure architectural elegance. When engineering perfection conflicts with timeline, budget, or operational constraints, we present pragmatic compromise models with transparent trade-offs so stakeholders can make informed decisions.
               </div>
-            </div>
-          </div>
-
-          <!-- Item 5 -->
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">How do you decide whether AI should be part of a product?</span>
-              <span class="faq-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+</div>
+</div>
+<!-- Item 5 -->
+<div class="faq-item">
+<button aria-controls="faq-answer-5" aria-expanded="false" class="faq-question" type="button">
+<span class="faq-question-text">How do you decide whether AI should be part of a product?</span>
+<span aria-hidden="true" class="faq-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
-              </span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
+</span>
+</button>
+<div class="faq-answer" id="faq-answer-5">
+<div class="faq-answer-inner">
                 We apply AI only where it delivers measurable enterprise ROI—such as reducing manual processing times, extracting structured insights from unstructured data, or augmenting cognitive workflows. If traditional deterministic rules or algorithmic pipelines solve the problem faster and more reliably, we recommend those instead.
               </div>
-            </div>
-          </div>
-
-          <!-- Item 6 -->
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-question-text">What happens after the first version goes into production?</span>
-              <span class="faq-icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+</div>
+</div>
+<!-- Item 6 -->
+<div class="faq-item">
+<button aria-controls="faq-answer-6" aria-expanded="false" class="faq-question" type="button">
+<span class="faq-question-text">What happens after the first version goes into production?</span>
+<span aria-hidden="true" class="faq-icon">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
-              </span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
+</span>
+</button>
+<div class="faq-answer" id="faq-answer-6">
+<div class="faq-answer-inner">
                 We ensure total knowledge transfer, comprehensive operational runbooks, and production stabilization support. Your internal engineering team retains full ownership of the codebase and infrastructure with zero vendor lock-in, with optional ongoing advisory support as your system scales.
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =========================================================================
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
        10. CONTACT US / DISCUSS WITH US SECTION (MATCHING VIDEO DESIGN)
        Radial gradient background, client proof badges, quote, glassmorphism form
        ========================================================================= -->
-    <!-- =========================================================================
+<!-- =========================================================================
        10. CONTACT US / ARCHITECTURAL REVIEW SECTION (AARK BRAND THEME & CONTENT)
        Senior delivery team evaluation, verified proof & interactive diagnostic intake
        ========================================================================= -->
-  <section class="section-contact-us" id="contact">
-    <div class="contact-us-container">
-      <div class="contact-us-grid">
-        <!-- Left Column: Copy & Enterprise Value Proof -->
-        <div class="contact-us-info">
-          <div class="contact-us-header">
-            <span class="contact-us-label">DIAGNOSTIC SESSION &bull; ARCHITECTURAL REVIEW</span>
-            <h2 class="contact-us-title">
-              Let’s Eliminate Your<br>
-              <span class="heading-accent">Operational Bottlenecks.</span>
-            </h2>
-            <p class="contact-us-subtitle">
-              Book a 30-minute diagnostic session with a senior systems architect. No generic sales pitches&mdash;just an honest evaluation of your systems, data architecture, and clear recommendations.
+<section class="section-contact-us" id="contact">
+<div class="contact-us-container">
+<div class="contact-us-grid">
+<!-- Left Column: Copy & Enterprise Value Proof -->
+<div class="contact-us-info">
+<div class="contact-us-header">
+<span class="contact-us-label">DIAGNOSTIC SESSION • ARCHITECTURAL REVIEW</span>
+<h2 class="contact-us-title">
+              Let’s Eliminate Your<br/>
+<span class="heading-accent">Operational Bottlenecks.</span>
+</h2>
+<p class="contact-us-subtitle">
+              Book a 30-minute diagnostic session with a senior systems architect. No generic sales pitches—just an honest evaluation of your systems, data architecture, and clear recommendations.
             </p>
-          </div>
-
-          <!-- AARK Enterprise Pillars & Proof Badges -->
-          <div class="contact-us-proof">
-            <div class="contact-value-badges">
-              <span class="contact-badge"><span class="badge-dot">✦</span> 100% Principal Architects &bull; Zero Junior Handoffs</span>
-              <span class="contact-badge"><span class="badge-dot">✦</span> 14-Day Production Iterations</span>
-              <span class="contact-badge"><span class="badge-dot">✦</span> Measurable ROI &amp; Friction Reduction</span>
-            </div>
-
-            <div class="contact-proof-card">
-              <p class="contact-proof-quote">
-                &ldquo;AARK eliminated 14 hours of weekly manual reconciliation across our Oracle ERP and Snowflake within our first sprint.&rdquo;
+</div>
+<!-- AARK Enterprise Pillars & Proof Badges -->
+<div class="contact-us-proof">
+<div class="contact-value-badges">
+<span class="contact-badge"><span class="badge-dot">✦</span> 100% Principal Architects • Zero Junior Handoffs</span>
+<span class="contact-badge"><span class="badge-dot">✦</span> 14-Day Production Iterations</span>
+<span class="contact-badge"><span class="badge-dot">✦</span> Measurable ROI &amp; Friction Reduction</span>
+</div>
+<div class="contact-proof-card">
+<p class="contact-proof-quote">
+                “AARK eliminated 14 hours of weekly manual reconciliation across our Oracle ERP and Snowflake within our first sprint.”
               </p>
-              <span class="contact-proof-author">&mdash; VP of Technology &amp; Operations, Industrial Distribution</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Column: Glassmorphic Interactive Contact Form -->
-        <div class="contact-form-card">
-          <form class="contact-form" id="project-contact-form" novalidate>
-            <div class="form-field-group">
-              <label for="contact-name" class="field-label">Full Name *</label>
-              <input type="text" id="contact-name" name="name" class="field-input" placeholder="e.g. Sarah Jenkins" required />
-            </div>
-
-            <div class="form-field-group">
-              <label for="contact-email" class="field-label">Work Email *</label>
-              <input type="email" id="contact-email" name="email" class="field-input" placeholder="e.g. sjenkins@company.com" required />
-            </div>
-
-            <div class="form-field-group">
-              <label for="contact-company" class="field-label">Company &amp; Core Systems</label>
-              <input type="text" id="contact-company" name="company" class="field-input" placeholder="e.g. Oracle ERP, Snowflake, Databricks, AI" />
-            </div>
-
-            <div class="form-field-group">
-              <label for="contact-message" class="field-label">Primary Bottleneck to Solve *</label>
-              <textarea id="contact-message" name="message" class="field-input field-textarea" rows="2" placeholder="Describe the operational friction, manual work, or system gap..." required></textarea>
-            </div>
-
-            <!-- Submit Button -->
-            <div class="form-submit-wrap">
-              <button type="submit" class="btn-form-submit" id="contact-submit-btn">
-                <span class="btn-text">Request Architectural Review</span>
-                <span class="btn-submit-icon" aria-hidden="true">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<span class="contact-proof-author">— VP of Technology &amp; Operations, Industrial Distribution</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Glassmorphic Interactive Contact Form -->
+<div class="contact-form-card">
+<form class="contact-form" data-endpoint="" id="project-contact-form">
+<div class="form-field-group">
+<label class="field-label" for="contact-name">Full Name *</label>
+<input class="field-input" id="contact-name" name="name" placeholder="e.g. Sarah Jenkins" required="" type="text"/>
+</div>
+<div class="form-field-group">
+<label class="field-label" for="contact-email">Work Email *</label>
+<input class="field-input" id="contact-email" name="email" placeholder="e.g. sjenkins@company.com" required="" type="email"/>
+</div>
+<div class="form-field-group">
+<label class="field-label" for="contact-company">Company &amp; Core Systems</label>
+<input class="field-input" id="contact-company" name="company" placeholder="e.g. Oracle ERP, Snowflake, Databricks, AI" type="text"/>
+</div>
+<div class="form-field-group">
+<label class="field-label" for="contact-message">Primary Bottleneck to Solve *</label>
+<textarea class="field-input field-textarea" id="contact-message" name="message" placeholder="Describe the operational friction, manual work, or system gap..." required="" rows="2"></textarea>
+</div>
+<!-- Submit Button -->
+<div class="form-submit-wrap">
+<button class="btn-form-submit" id="contact-submit-btn" type="submit">
+<span class="btn-text">Request Architectural Review</span>
+<span aria-hidden="true" class="btn-submit-icon">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M7 17L17 7M17 7H7M17 7V17"/>
                   </svg>
-                </span>
-              </button>
-            </div>
-
-            <!-- Success / Feedback message -->
-            <div class="form-feedback-message" id="form-feedback-message" style="display: none;"></div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
+</span>
+</button>
+</div>
+<!-- Success / Feedback message -->
+<p class="form-delivery-note">Submitting opens your email app with the enquiry prefilled. Send the email there to complete your request.</p><div aria-live="polite" class="form-feedback-message" id="form-feedback-message" role="status" style="display: none;"></div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
        10. FOOTER SECTION (MATCHING REFERENCE DESIGN)
        3-column layout, contact info with icons, social links, legal bar & giant watermark
        ========================================================================= -->
-    <!-- =========================================================================
+<!-- =========================================================================
        10. FOOTER SECTION (CORRECT AARK HEADQUARTERS & AVAILABLE SECTIONS)
        ========================================================================= -->
-  <footer class="site-footer" id="footer">
-    <div class="footer-container">
-      <!-- Main 3-Column Footer Grid -->
-      <div class="footer-grid">
-        <!-- Column 1: Correct Contact & Location Information -->
-        <div class="footer-col footer-col-contact">
-          <h4 class="footer-col-title">Contact Us</h4>
-          <ul class="footer-contact-list">
-            <li class="footer-contact-item footer-address-item">
-              <svg class="footer-icon footer-pin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<footer class="site-footer" id="footer">
+<div class="footer-container">
+<!-- Main 3-Column Footer Grid -->
+<div class="footer-grid">
+<!-- Column 1: Correct Contact & Location Information -->
+<div class="footer-col footer-col-contact">
+<h4 class="footer-col-title">Contact Us</h4>
+<ul class="footer-contact-list">
+<li class="footer-contact-item footer-address-item">
+<svg class="footer-icon footer-pin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
-              <div class="footer-contact-text footer-address-text">
-                <span class="footer-location-title">Location</span>
-                <span class="footer-location-line">Fort Mill, SC.</span>
-                <span class="footer-location-sub">Working across Charlotte and the Carolinas.</span>
-              </div>
-            </li>
-            <li class="footer-contact-item">
-              <svg class="footer-icon footer-mail-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<div class="footer-contact-text footer-address-text">
+<span class="footer-location-title">Location</span>
+<span class="footer-location-line">Fort Mill, SC.</span>
+<span class="footer-location-sub">Working across Charlotte and the Carolinas.</span>
+</div>
+</li>
+<li class="footer-contact-item">
+<svg class="footer-icon footer-mail-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
-              <div class="footer-contact-text">
-                <a href="mailto:hello@aarkinn.com" class="footer-email-link">hello@aarkinn.com</a>
-              </div>
-            </li>
-          </ul>
+<div class="footer-contact-text">
+<a class="footer-email-link" href="mailto:hello@aarkinn.com">hello@aarkinn.com</a>
+</div>
+</li>
+</ul>
 
-          <div class="footer-social-wrap">
-            <h5 class="footer-social-title">Follow Us On</h5>
-            <div class="footer-social-links">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="X (Twitter)">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Facebook">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="YouTube">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Column 2: Available Website Sections Only -->
-        <div class="footer-col footer-col-company">
-          <h4 class="footer-col-title">Navigation</h4>
-          <ul class="footer-links-list">
-            <li><a href="#practices">Practices</a></li>
-            <li><a href="#platforms">Platforms</a></li>
-            <li><a href="#problem">Why Us</a></li>
-            <li><a href="#models">Delivery Journey</a></li>
-            <li><a href="#faq">Frequently Asked Questions</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <!-- Column 3: Practices & Disciplines -->
-        <div class="footer-col footer-col-services">
-          <h4 class="footer-col-title">Core Disciplines</h4>
-          <ul class="footer-links-list">
-            <li><a href="#practices">Oracle Fusion Cloud &amp; ERP</a></li>
-            <li><a href="#practices">Cloud &amp; Data Lakehouse</a></li>
-            <li><a href="#practices">Applied AI &amp; Automation</a></li>
-            <li><a href="#platforms">Snowflake &amp; Databricks</a></li>
-            <li><a href="#platforms">AWS &amp; Microsoft Azure</a></li>
-            <li><a href="#contact">Architectural Review</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Footer Divider -->
-      <div class="footer-divider"></div>
-
-      <!-- Footer Bottom Row: Copyright + Legal Links -->
-      <div class="footer-bottom-row">
-        <p class="footer-copyright">
-          &copy; 2026 AARK Innovations Technologies. All rights reserved.
+</div>
+<!-- Column 2: Available Website Sections Only -->
+<div class="footer-col footer-col-company">
+<h4 class="footer-col-title">Navigation</h4>
+<ul class="footer-links-list">
+<li><a href="#practices">Practices</a></li>
+<li><a href="#platforms">Platforms</a></li>
+<li><a href="#problem">Why Us</a></li>
+<li><a href="#models">Delivery Journey</a></li>
+<li><a href="#faq">Frequently Asked Questions</a></li>
+<li><a href="#contact">Contact Us</a></li>
+</ul>
+</div>
+<!-- Column 3: Practices & Disciplines -->
+<div class="footer-col footer-col-services">
+<h4 class="footer-col-title">Core Disciplines</h4>
+<ul class="footer-links-list">
+<li><a href="#practices">Oracle Fusion Cloud &amp; ERP</a></li>
+<li><a href="#practices">Cloud &amp; Data Lakehouse</a></li>
+<li><a href="#practices">Applied AI &amp; Automation</a></li>
+<li><a href="#platforms">Snowflake &amp; Databricks</a></li>
+<li><a href="#platforms">AWS &amp; Microsoft Azure</a></li>
+<li><a href="#contact">Architectural Review</a></li>
+</ul>
+</div>
+</div>
+<!-- Footer Divider -->
+<div class="footer-divider"></div>
+<!-- Footer Bottom Row: Copyright + Legal Links -->
+<div class="footer-bottom-row">
+<p class="footer-copyright">
+          © 2026 AARK Innovations Technologies. All rights reserved.
         </p>
-        <div class="footer-legal-links">
-          <a href="#privacy">Privacy Policy</a>
-          <a href="#terms">Terms of Use</a>
-        </div>
-      </div>
-
-      <!-- Giant Architectural Watermark at Bottom (Matching Reference) -->
-      <div class="footer-watermark" aria-hidden="true">
-        <span class="watermark-brand">AARK</span> <span class="watermark-accent">Innovations</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Pre-baked Offline Aarkin Logo Vector Coordinates -->
-  <script src="assets/aarkin_points.js"></script>
-  <!-- Hero Streamline & Tech Pipeline Engine -->
-  <script src="main.js"></script>
-  <!-- Master Application Script -->
-  <script src="app.js"></script>
+<div class="footer-legal-links">
+<a href="privacy.html">Privacy Policy</a>
+<a href="terms.html">Terms of Use</a>
+</div>
+</div>
+<!-- Giant Architectural Watermark at Bottom (Matching Reference) -->
+<div aria-hidden="true" class="footer-watermark">
+<span class="watermark-brand">AARK</span> <span class="watermark-accent">Innovations</span>
+</div>
+</div>
+</footer>
+<!-- Pre-baked Offline Aarkin Logo Vector Coordinates -->
+<script src="assets/aarkin_points.js"></script>
+<!-- Hero Streamline & Tech Pipeline Engine -->
+<script src="main.js"></script>
+<!-- Master Application Script -->
+<script src="app.js"></script>
 </body>
 </html>

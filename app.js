@@ -13,13 +13,14 @@
     history.scrollRestoration = 'manual';
   }
 
+  function decodeHash(hash) { try { return decodeURIComponent(hash.slice(1)); } catch { return hash.slice(1); } }
   // Clean initial load handling: scroll to top on refresh unless valid section hash
   function handleInitialHash() {
     if (window.location.hash && window.location.hash !== '#top' && window.location.hash !== '#') {
-      const target = document.querySelector(window.location.hash);
+      const target = document.getElementById(decodeHash(window.location.hash));
       if (target) {
         setTimeout(() => {
-          const navOffset = 76;
+          const navOffset = (document.getElementById('top-navbar')?.getBoundingClientRect().bottom || 64) + 12;
           const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navOffset;
           window.scrollTo({ top: targetPosition, behavior: 'auto' });
         }, 100);
@@ -144,7 +145,7 @@
      3. SECTION 05 SERVICE ROW INTERACTIONS & ARROW TRACKING (FROM AARKINN 5)
      ========================================================================= */
   function initPlatformRowInteractions() {
-    const rows = document.querySelectorAll('.re-service');
+    const rows = document.querySelectorAll('a.re-service[href]');
     if (!rows.length) return;
 
     rows.forEach((row) => {
@@ -164,13 +165,7 @@
       });
 
       row.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          const target = document.querySelector('#contact');
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-          }
-        }
+        if (e.key === ' ') { e.preventDefault(); row.click(); }
       });
     });
   }
@@ -309,6 +304,10 @@
     // Smooth click navigation on milestone nodes
     nodes.forEach((node, idx) => {
       node.style.cursor = 'pointer';
+      node.setAttribute('role', 'button');
+      node.setAttribute('tabindex', '0');
+      node.setAttribute('aria-label', node.title || `Journey step ${idx + 1}`);
+      node.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); node.click(); } });
       node.addEventListener('click', () => {
         const card = cards[idx];
         if (card) {
@@ -336,8 +335,8 @@
       const rect = svg.getBoundingClientRect();
       const focus = window.innerHeight * 0.55; // viewport reading line
 
-      // Fallback for stacked view on smaller viewports (< 1200px)
-      if (!rect.height || window.innerWidth < 1200) {
+      // Fallback for stacked view on smaller viewports (< 1360px)
+      if (!rect.height || window.innerWidth < 1360) {
         let act = -1;
         cards.forEach((c, i) => {
           if (c.getBoundingClientRect().top < window.innerHeight * 0.6) act = i;
@@ -637,6 +636,10 @@
     const faqItems = document.querySelectorAll('.faq-item');
     if (!faqItems || faqItems.length === 0) return;
 
+    const resizeOpenAnswers = () => faqItems.forEach(item => { const answer = item.querySelector('.faq-answer'); if (answer && item.classList.contains('is-open')) answer.style.maxHeight = answer.scrollHeight + 'px'; });
+    window.addEventListener('resize', resizeOpenAnswers, {passive:true});
+    if (document.fonts) document.fonts.ready.then(resizeOpenAnswers);
+    resizeOpenAnswers();
     faqItems.forEach((item) => {
       const questionBtn = item.querySelector('.faq-question');
       const answer = item.querySelector('.faq-answer');
@@ -679,14 +682,14 @@
         const href = this.getAttribute('href');
         if (!href || href === '#') return;
 
-        const target = document.querySelector(href);
+        const target = document.getElementById(decodeHash(href));
         if (target) {
           e.preventDefault();
-          const navOffset = 76;
+          const navOffset = (document.getElementById('top-navbar')?.getBoundingClientRect().bottom || 64) + 12;
           const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navOffset;
           window.scrollTo({
             top: targetPosition,
-            behavior: 'smooth'
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
           });
 
           if (history.pushState) {
@@ -708,44 +711,41 @@
     const feedbackMsg = document.getElementById('form-feedback-message');
     const submitBtn = document.getElementById('contact-submit-btn');
 
-    // Handle Form Submission
-    form.addEventListener('submit', function (e) {
+    function showFeedback(message, error = false) {
+      feedbackMsg.style.display = 'block';
+      feedbackMsg.classList.toggle('is-error', error);
+      feedbackMsg.textContent = message;
+    }
+    const initialLabel = submitBtn.innerHTML;
+    if (form.dataset.endpoint?.trim()) { const note = form.querySelector('.form-delivery-note'); if (note) note.textContent = 'Submit your enquiry using the form below.'; }
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-
-      const name = document.getElementById('contact-name').value.trim();
-      const email = document.getElementById('contact-email').value.trim();
-      const message = document.getElementById('contact-message').value.trim();
-
-      if (!name || !email || !message) {
-        if (feedbackMsg) {
-          feedbackMsg.style.display = 'block';
-          feedbackMsg.style.background = 'rgba(239, 68, 68, 0.2)';
-          feedbackMsg.style.borderColor = 'rgba(239, 68, 68, 0.5)';
-          feedbackMsg.textContent = 'Please fill out all required fields marked with *.';
-        }
+      const data = Object.fromEntries(new FormData(form));
+      for (const key of Object.keys(data)) data[key] = String(data[key]).trim();
+      if (!data.name || !data.email || !data.message || !form.checkValidity()) {
+        form.reportValidity();
+        showFeedback('Please enter a valid email and complete all required fields.', true);
         return;
       }
-
-      // Success Feedback
-      if (submitBtn) {
+      const endpoint = form.dataset.endpoint?.trim();
+      if (endpoint) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span>Sending...</span>';
+        submitBtn.textContent = 'Sending…';
+        try {
+          const response = await fetch(endpoint, {method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body:JSON.stringify(data)});
+          if (!response.ok) throw new Error('Submission failed');
+          form.reset();
+          showFeedback('Thank you! Your enquiry has been submitted.');
+        } catch (error) {
+          showFeedback('Unable to submit. Your details are still here; please try again or email hello@aarkinn.com.', true);
+        } finally { submitBtn.disabled = false; submitBtn.innerHTML = initialLabel; }
+      } else {
+        const subject = 'Architectural review request — ' + data.name;
+        const body = `Full Name: ${data.name}\nWork Email: ${data.email}\nCompany & Core Systems: ${data.company || 'Not provided'}\n\nPrimary Bottleneck to Solve:\n${data.message}`;
+        const link = 'mailto:hello@aarkinn.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        showFeedback('Your email draft is ready. Send it from your email app to complete your request. If it does not open, email hello@aarkinn.com directly.');
+        window.location.href = link;
       }
-
-      setTimeout(() => {
-        form.reset();
-        if (fileNamePreview) fileNamePreview.textContent = '';
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = '<span>Submit</span>';
-        }
-        if (feedbackMsg) {
-          feedbackMsg.style.display = 'block';
-          feedbackMsg.style.background = 'rgba(34, 197, 94, 0.2)';
-          feedbackMsg.style.borderColor = 'rgba(34, 197, 94, 0.5)';
-          feedbackMsg.innerHTML = '✓ Thank you! Your project details have been received. An AARK technical director will be in touch within 24 hours.';
-        }
-      }, 700);
     });
   }
 

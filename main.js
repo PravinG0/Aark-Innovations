@@ -481,8 +481,9 @@
 
     if (width <= 1024) {
       cx = width * 0.50;
-      cy = height * 0.32;
-      logoHeight = Math.min(height * 0.45, 340);
+      const visual = document.querySelector(".hero-visual-slot")?.getBoundingClientRect();
+      cy = visual ? visual.top - wrapperRect.top + visual.height / 2 : height * 0.25;
+      logoHeight = Math.min(visual ? visual.height * 0.88 : height * 0.32, width * 0.70, 300);
       logoWidth = logoHeight * 1.08;
     } else {
       cx = width * 0.22;
